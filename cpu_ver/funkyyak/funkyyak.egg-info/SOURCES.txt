@@ -1,0 +1,10 @@
+setup.py
+funkyyak/__init__.py
+funkyyak/core.py
+funkyyak/grads.py
+funkyyak/node_types.py
+funkyyak.egg-info/PKG-INFO
+funkyyak.egg-info/SOURCES.txt
+funkyyak.egg-info/dependency_links.txt
+funkyyak.egg-info/requires.txt
+funkyyak.egg-info/top_level.txt

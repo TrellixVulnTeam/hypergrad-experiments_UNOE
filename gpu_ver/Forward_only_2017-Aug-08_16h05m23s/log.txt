@@ -1,0 +1,694 @@
+Last login: Tue Aug  8 12:42:14 2017 from 172.16.36.225
+mstjules@gpu-pt1-01:~$ HOME=/scratch/mstjules
+mstjules@gpu-pt1-01:/u/mstjules$ export HOME
+mstjules@gpu-pt1-01:/u/mstjules$ cd /scratch/mstjules/generic_1/drmad-master_May22/gpu_ver
+mstjules@gpu-pt1-01:~/generic_1/drmad-master_May22/gpu_ver$ THEANO_FLAGS='mode=FAST_RUN,optimizer=fast_compile,device=cuda4,floatX=float32,force_device=True' python simple_mlp2_gpu_forward_only.py
+Using cuDNN version 5110 on context None
+Mapped name None to device cuda4: Tesla K80 (0000:86:00.0)
+all argument:  Namespace(MLPlayer=[300, 300, 300, 10], addActivationNoise=False, addInputNoise=False, batchSizeEle=64, batchSizeHyper=64, bn=True, classes=10, dataset='cifar10', depth=40, dropout=0.2, eleAlg='SGDNesterov', evaluateTestInterval=1, first_output=16, growth_rate=12, initScale=False, invSigmoidActivationNoiseMagnitude=-5, invSigmoidInputNoiseMagnitude=-4, lrEle=0.1, lrHyper=0.02, lrLlr=0.1, maxEpochInit=300, maxEpochMult=1.4, maxMaxEpoch=300, metaEpoch=80, meta_bw=True, model='convnet', momEle=0.9, momHyper=0.7, momLlr=0.0, nBackwardMult=1.0, nReversedIters=4, num_blocks=3, onlineItersPerUpdate=131, preContrast='None', preProcess='None', predata=False, processedDataName='cifar10_processed.npz', ratioHyper=0.2, ratioValid=0.2, regInit={'L1': -3.0, 'L2': -4.0}, regL1=False, regL2=True, seed=1234, validHyper=0.0, verbose=True)
+[pre_conv.W, block1_l01_scale.scales, block1_l01_shift.b, block1_l01_conv.W, block1_l02_scale.scales, block1_l02_shift.b, block1_l02_conv.W, block1_l03_scale.scales, block1_l03_shift.b, block1_l03_conv.W, block1_l04_scale.scales, block1_l04_shift.b, block1_l04_conv.W, block1_l05_scale.scales, block1_l05_shift.b, block1_l05_conv.W, block1_l06_scale.scales, block1_l06_shift.b, block1_l06_conv.W, block1_l07_scale.scales, block1_l07_shift.b, block1_l07_conv.W, block1_l08_scale.scales, block1_l08_shift.b, block1_l08_conv.W, block1_l09_scale.scales, block1_l09_shift.b, block1_l09_conv.W, block1_l10_scale.scales, block1_l10_shift.b, block1_l10_conv.W, block1_l11_scale.scales, block1_l11_shift.b, block1_l11_conv.W, block1_l12_scale.scales, block1_l12_shift.b, block1_l12_conv.W, block1_trs_scale.scales, block1_trs_shift.b, block1_trs_conv.W, block2_l01_scale.scales, block2_l01_shift.b, block2_l01_conv.W, block2_l02_scale.scales, block2_l02_shift.b, block2_l02_conv.W, block2_l03_scale.scales, block2_l03_shift.b, block2_l03_conv.W, block2_l04_scale.scales, block2_l04_shift.b, block2_l04_conv.W, block2_l05_scale.scales, block2_l05_shift.b, block2_l05_conv.W, block2_l06_scale.scales, block2_l06_shift.b, block2_l06_conv.W, block2_l07_scale.scales, block2_l07_shift.b, block2_l07_conv.W, block2_l08_scale.scales, block2_l08_shift.b, block2_l08_conv.W, block2_l09_scale.scales, block2_l09_shift.b, block2_l09_conv.W, block2_l10_scale.scales, block2_l10_shift.b, block2_l10_conv.W, block2_l11_scale.scales, block2_l11_shift.b, block2_l11_conv.W, block2_l12_scale.scales, block2_l12_shift.b, block2_l12_conv.W, block2_trs_scale.scales, block2_trs_shift.b, block2_trs_conv.W, block3_l01_scale.scales, block3_l01_shift.b, block3_l01_conv.W, block3_l02_scale.scales, block3_l02_shift.b, block3_l02_conv.W, block3_l03_scale.scales, block3_l03_shift.b, block3_l03_conv.W, block3_l04_scale.scales, block3_l04_shift.b, block3_l04_conv.W, block3_l05_scale.scales, block3_l05_shift.b, block3_l05_conv.W, block3_l06_scale.scales, block3_l06_shift.b, block3_l06_conv.W, block3_l07_scale.scales, block3_l07_shift.b, block3_l07_conv.W, block3_l08_scale.scales, block3_l08_shift.b, block3_l08_conv.W, block3_l09_scale.scales, block3_l09_shift.b, block3_l09_conv.W, block3_l10_scale.scales, block3_l10_shift.b, block3_l10_conv.W, block3_l11_scale.scales, block3_l11_shift.b, block3_l11_conv.W, block3_l12_scale.scales, block3_l12_shift.b, block3_l12_conv.W, post_scale.scales, post_shift.b, output.W, output.b]
+[pre_conv.W, block1_l01_scale.scales, block1_l01_conv.W, block1_l02_scale.scales, block1_l02_conv.W, block1_l03_scale.scales, block1_l03_conv.W, block1_l04_scale.scales, block1_l04_conv.W, block1_l05_scale.scales, block1_l05_conv.W, block1_l06_scale.scales, block1_l06_conv.W, block1_l07_scale.scales, block1_l07_conv.W, block1_l08_scale.scales, block1_l08_conv.W, block1_l09_scale.scales, block1_l09_conv.W, block1_l10_scale.scales, block1_l10_conv.W, block1_l11_scale.scales, block1_l11_conv.W, block1_l12_scale.scales, block1_l12_conv.W, block1_trs_scale.scales, block1_trs_conv.W, block2_l01_scale.scales, block2_l01_conv.W, block2_l02_scale.scales, block2_l02_conv.W, block2_l03_scale.scales, block2_l03_conv.W, block2_l04_scale.scales, block2_l04_conv.W, block2_l05_scale.scales, block2_l05_conv.W, block2_l06_scale.scales, block2_l06_conv.W, block2_l07_scale.scales, block2_l07_conv.W, block2_l08_scale.scales, block2_l08_conv.W, block2_l09_scale.scales, block2_l09_conv.W, block2_l10_scale.scales, block2_l10_conv.W, block2_l11_scale.scales, block2_l11_conv.W, block2_l12_scale.scales, block2_l12_conv.W, block2_trs_scale.scales, block2_trs_conv.W, block3_l01_scale.scales, block3_l01_conv.W, block3_l02_scale.scales, block3_l02_conv.W, block3_l03_scale.scales, block3_l03_conv.W, block3_l04_scale.scales, block3_l04_conv.W, block3_l05_scale.scales, block3_l05_conv.W, block3_l06_scale.scales, block3_l06_conv.W, block3_l07_scale.scales, block3_l07_conv.W, block3_l08_scale.scales, block3_l08_conv.W, block3_l09_scale.scales, block3_l09_conv.W, block3_l10_scale.scales, block3_l10_conv.W, block3_l11_scale.scales, block3_l11_conv.W, block3_l12_scale.scales, block3_l12_conv.W, post_scale.scales, output.W]
+[pre_conv.L2, block1_l01_scale.L2, block1_l01_conv.L2, block1_l02_scale.L2, block1_l02_conv.L2, block1_l03_scale.L2, block1_l03_conv.L2, block1_l04_scale.L2, block1_l04_conv.L2, block1_l05_scale.L2, block1_l05_conv.L2, block1_l06_scale.L2, block1_l06_conv.L2, block1_l07_scale.L2, block1_l07_conv.L2, block1_l08_scale.L2, block1_l08_conv.L2, block1_l09_scale.L2, block1_l09_conv.L2, block1_l10_scale.L2, block1_l10_conv.L2, block1_l11_scale.L2, block1_l11_conv.L2, block1_l12_scale.L2, block1_l12_conv.L2, block1_trs_scale.L2, block1_trs_conv.L2, block2_l01_scale.L2, block2_l01_conv.L2, block2_l02_scale.L2, block2_l02_conv.L2, block2_l03_scale.L2, block2_l03_conv.L2, block2_l04_scale.L2, block2_l04_conv.L2, block2_l05_scale.L2, block2_l05_conv.L2, block2_l06_scale.L2, block2_l06_conv.L2, block2_l07_scale.L2, block2_l07_conv.L2, block2_l08_scale.L2, block2_l08_conv.L2, block2_l09_scale.L2, block2_l09_conv.L2, block2_l10_scale.L2, block2_l10_conv.L2, block2_l11_scale.L2, block2_l11_conv.L2, block2_l12_scale.L2, block2_l12_conv.L2, block2_trs_scale.L2, block2_trs_conv.L2, block3_l01_scale.L2, block3_l01_conv.L2, block3_l02_scale.L2, block3_l02_conv.L2, block3_l03_scale.L2, block3_l03_conv.L2, block3_l04_scale.L2, block3_l04_conv.L2, block3_l05_scale.L2, block3_l05_conv.L2, block3_l06_scale.L2, block3_l06_conv.L2, block3_l07_scale.L2, block3_l07_conv.L2, block3_l08_scale.L2, block3_l08_conv.L2, block3_l09_scale.L2, block3_l09_conv.L2, block3_l10_scale.L2, block3_l10_conv.L2, block3_l11_scale.L2, block3_l11_conv.L2, block3_l12_scale.L2, block3_l12_conv.L2, post_scale.L2, output.L2]
+[]
+4loss and losswithpenalty <class 'theano.tensor.var.TensorVariable'> <class 'theano.tensor.var.TensorVariable'>
+---------------------------------------------------------------------------------------------------
+Forward_only_2017-Aug-08_16h05m23s
+---------------------------------------------------------------------------------------------------
+# of epochs: 300
+# of ele, valid, test:  45000 5000 10000
+# of ele batches =703
+Eval on Train Set: unreg_loss = 2.3794, loss = 3.4674, error = 92.1000
+Eval on Valid Set: loss = 2.3851, error = 92.8000
+Eval on Test Set: loss = 2.3740, error = 92.2000
+Train Set: Epoch 0, batch 0, time = 0s, loss = 3.4388, unreg loss = 2.3508, error = 90.6250
+Train Set: Epoch 0, batch 20, time = 8s, loss = 3.2801, unreg loss = 2.1980, error = 85.9375
+Train Set: Epoch 0, batch 40, time = 15s, loss = 3.4771, unreg loss = 2.4075, error = 75.0000
+Train Set: Epoch 0, batch 60, time = 23s, loss = 2.8604, unreg loss = 1.8064, error = 65.6250
+Train Set: Epoch 0, batch 80, time = 31s, loss = 2.6969, unreg loss = 1.6582, error = 70.3125
+Train Set: Epoch 0, batch 100, time = 38s, loss = 2.7797, unreg loss = 1.7551, error = 64.0625
+Train Set: Epoch 0, batch 120, time = 46s, loss = 2.7971, unreg loss = 1.7864, error = 75.0000
+Train Set: Epoch 0, batch 140, time = 54s, loss = 2.6682, unreg loss = 1.6708, error = 60.9375
+Train Set: Epoch 0, batch 160, time = 61s, loss = 2.6336, unreg loss = 1.6493, error = 60.9375
+Train Set: Epoch 0, batch 180, time = 69s, loss = 2.7455, unreg loss = 1.7739, error = 70.3125
+Train Set: Epoch 0, batch 200, time = 77s, loss = 2.4805, unreg loss = 1.5217, error = 57.8125
+Train Set: Epoch 0, batch 220, time = 84s, loss = 2.6631, unreg loss = 1.7166, error = 67.1875
+Train Set: Epoch 0, batch 240, time = 92s, loss = 2.3452, unreg loss = 1.4108, error = 56.2500
+Train Set: Epoch 0, batch 260, time = 100s, loss = 2.3378, unreg loss = 1.4149, error = 59.3750
+Train Set: Epoch 0, batch 280, time = 107s, loss = 2.5508, unreg loss = 1.6397, error = 62.5000
+Train Set: Epoch 0, batch 300, time = 115s, loss = 2.1447, unreg loss = 1.2444, error = 45.3125
+Train Set: Epoch 0, batch 320, time = 123s, loss = 2.3112, unreg loss = 1.4221, error = 45.3125
+Train Set: Epoch 0, batch 340, time = 131s, loss = 2.4210, unreg loss = 1.5426, error = 62.5000
+Train Set: Epoch 0, batch 360, time = 138s, loss = 2.1599, unreg loss = 1.2924, error = 57.8125
+Train Set: Epoch 0, batch 380, time = 146s, loss = 2.2325, unreg loss = 1.3752, error = 45.3125
+Train Set: Epoch 0, batch 400, time = 154s, loss = 2.4480, unreg loss = 1.6007, error = 57.8125
+Train Set: Epoch 0, batch 420, time = 161s, loss = 2.3441, unreg loss = 1.5061, error = 51.5625
+Train Set: Epoch 0, batch 440, time = 169s, loss = 2.0155, unreg loss = 1.1876, error = 43.7500
+Train Set: Epoch 0, batch 460, time = 177s, loss = 2.3320, unreg loss = 1.5130, error = 59.3750
+Train Set: Epoch 0, batch 480, time = 185s, loss = 2.0087, unreg loss = 1.1984, error = 46.8750
+Train Set: Epoch 0, batch 500, time = 192s, loss = 2.1494, unreg loss = 1.3484, error = 53.1250
+Train Set: Epoch 0, batch 520, time = 200s, loss = 2.0002, unreg loss = 1.2079, error = 46.8750
+Train Set: Epoch 0, batch 540, time = 208s, loss = 2.1318, unreg loss = 1.3482, error = 45.3125
+Train Set: Epoch 0, batch 560, time = 215s, loss = 2.3508, unreg loss = 1.5760, error = 53.1250
+Train Set: Epoch 0, batch 580, time = 223s, loss = 2.1830, unreg loss = 1.4167, error = 51.5625
+Train Set: Epoch 0, batch 600, time = 231s, loss = 1.8799, unreg loss = 1.1217, error = 35.9375
+Train Set: Epoch 0, batch 620, time = 238s, loss = 1.9469, unreg loss = 1.1965, error = 45.3125
+Train Set: Epoch 0, batch 640, time = 246s, loss = 2.0159, unreg loss = 1.2732, error = 45.3125
+Train Set: Epoch 0, batch 660, time = 254s, loss = 1.9128, unreg loss = 1.1777, error = 45.3125
+Train Set: Epoch 0, batch 680, time = 262s, loss = 1.9851, unreg loss = 1.2575, error = 42.1875
+Train Set: Epoch 0, batch 700, time = 269s, loss = 2.2322, unreg loss = 1.5118, error = 48.4375
+Eval on Train Set: Epoch 0, batch 702, time = 273s, loss = 2.7707, unreg loss = 2.0515, error = 44.2000
+Eval on Valid Set: Epoch 0, batch 702, time = 276s, loss = 1.9223, error = 46.2000
+Eval on Test Set: Epoch 0, batch 702, time = 278s, loss = 1.8312, error = 43.1000
+Train Set: Epoch 1, batch 17, time = 297s, loss = 1.9050, unreg loss = 1.1916, error = 40.6250
+Train Set: Epoch 1, batch 37, time = 305s, loss = 1.7705, unreg loss = 1.0644, error = 37.5000
+Train Set: Epoch 1, batch 57, time = 313s, loss = 1.5679, unreg loss = 0.8689, error = 29.6875
+Train Set: Epoch 1, batch 77, time = 320s, loss = 1.8471, unreg loss = 1.1554, error = 40.6250
+Train Set: Epoch 1, batch 97, time = 328s, loss = 1.8527, unreg loss = 1.1676, error = 39.0625
+Train Set: Epoch 1, batch 117, time = 336s, loss = 1.8861, unreg loss = 1.2081, error = 42.1875
+Train Set: Epoch 1, batch 137, time = 344s, loss = 1.6189, unreg loss = 0.9479, error = 31.2500
+Train Set: Epoch 1, batch 157, time = 351s, loss = 1.7289, unreg loss = 1.0644, error = 37.5000
+Train Set: Epoch 1, batch 177, time = 359s, loss = 1.9065, unreg loss = 1.2478, error = 46.8750
+Train Set: Epoch 1, batch 197, time = 367s, loss = 1.9157, unreg loss = 1.2641, error = 54.6875
+Train Set: Epoch 1, batch 217, time = 374s, loss = 1.7315, unreg loss = 1.0862, error = 51.5625
+Train Set: Epoch 1, batch 237, time = 382s, loss = 1.9686, unreg loss = 1.3292, error = 42.1875
+Train Set: Epoch 1, batch 257, time = 390s, loss = 1.6099, unreg loss = 0.9767, error = 37.5000
+Train Set: Epoch 1, batch 277, time = 398s, loss = 1.7139, unreg loss = 1.0872, error = 39.0625
+Train Set: Epoch 1, batch 297, time = 405s, loss = 1.4292, unreg loss = 0.8088, error = 28.1250
+Train Set: Epoch 1, batch 317, time = 413s, loss = 1.5535, unreg loss = 0.9389, error = 31.2500
+Train Set: Epoch 1, batch 337, time = 421s, loss = 1.5910, unreg loss = 0.9824, error = 40.6250
+Train Set: Epoch 1, batch 357, time = 429s, loss = 1.6762, unreg loss = 1.0736, error = 34.3750
+Train Set: Epoch 1, batch 377, time = 436s, loss = 1.5070, unreg loss = 0.9096, error = 35.9375
+Train Set: Epoch 1, batch 397, time = 444s, loss = 1.6038, unreg loss = 1.0118, error = 37.5000
+Train Set: Epoch 1, batch 417, time = 452s, loss = 1.6042, unreg loss = 1.0175, error = 42.1875
+Train Set: Epoch 1, batch 437, time = 459s, loss = 1.4331, unreg loss = 0.8518, error = 28.1250
+Train Set: Epoch 1, batch 457, time = 467s, loss = 1.6406, unreg loss = 1.0644, error = 37.5000
+Train Set: Epoch 1, batch 477, time = 475s, loss = 1.5295, unreg loss = 0.9580, error = 35.9375
+Train Set: Epoch 1, batch 497, time = 483s, loss = 1.4462, unreg loss = 0.8798, error = 31.2500
+Train Set: Epoch 1, batch 517, time = 490s, loss = 1.5265, unreg loss = 0.9654, error = 39.0625
+Train Set: Epoch 1, batch 537, time = 498s, loss = 1.5954, unreg loss = 1.0390, error = 34.3750
+Train Set: Epoch 1, batch 557, time = 506s, loss = 1.6599, unreg loss = 1.1082, error = 32.8125
+Train Set: Epoch 1, batch 577, time = 514s, loss = 1.7509, unreg loss = 1.2040, error = 40.6250
+Train Set: Epoch 1, batch 597, time = 521s, loss = 1.5679, unreg loss = 1.0259, error = 31.2500
+Train Set: Epoch 1, batch 617, time = 529s, loss = 1.3897, unreg loss = 0.8521, error = 29.6875
+Train Set: Epoch 1, batch 637, time = 537s, loss = 1.2433, unreg loss = 0.7100, error = 28.1250
+Train Set: Epoch 1, batch 657, time = 544s, loss = 1.1296, unreg loss = 0.6009, error = 21.8750
+Train Set: Epoch 1, batch 677, time = 552s, loss = 1.3358, unreg loss = 0.8117, error = 26.5625
+Train Set: Epoch 1, batch 697, time = 560s, loss = 1.3491, unreg loss = 0.8291, error = 29.6875
+Eval on Train Set: Epoch 1, batch 702, time = 565s, loss = 1.6972, unreg loss = 1.1785, error = 28.7000
+Eval on Valid Set: Epoch 1, batch 702, time = 567s, loss = 1.1773, error = 32.4000
+Eval on Test Set: Epoch 1, batch 702, time = 570s, loss = 1.1298, error = 31.6000
+Train Set: Epoch 2, batch 14, time = 591s, loss = 1.5339, unreg loss = 1.0179, error = 29.6875
+Train Set: Epoch 2, batch 34, time = 599s, loss = 1.3970, unreg loss = 0.8851, error = 29.6875
+Train Set: Epoch 2, batch 54, time = 606s, loss = 1.5332, unreg loss = 1.0252, error = 31.2500
+Train Set: Epoch 2, batch 74, time = 614s, loss = 1.3499, unreg loss = 0.8464, error = 29.6875
+Train Set: Epoch 2, batch 94, time = 622s, loss = 1.3407, unreg loss = 0.8408, error = 26.5625
+Train Set: Epoch 2, batch 114, time = 630s, loss = 1.7651, unreg loss = 1.2692, error = 42.1875
+Train Set: Epoch 2, batch 134, time = 637s, loss = 1.5091, unreg loss = 1.0169, error = 32.8125
+Train Set: Epoch 2, batch 154, time = 645s, loss = 1.4445, unreg loss = 0.9563, error = 32.8125
+Train Set: Epoch 2, batch 174, time = 653s, loss = 1.3477, unreg loss = 0.8627, error = 31.2500
+Train Set: Epoch 2, batch 194, time = 660s, loss = 1.2485, unreg loss = 0.7671, error = 31.2500
+Train Set: Epoch 2, batch 214, time = 668s, loss = 1.4701, unreg loss = 0.9925, error = 35.9375
+Train Set: Epoch 2, batch 234, time = 676s, loss = 1.2590, unreg loss = 0.7844, error = 23.4375
+Train Set: Epoch 2, batch 254, time = 684s, loss = 1.3510, unreg loss = 0.8798, error = 32.8125
+Train Set: Epoch 2, batch 274, time = 691s, loss = 1.2568, unreg loss = 0.7888, error = 29.6875
+Train Set: Epoch 2, batch 294, time = 699s, loss = 1.1569, unreg loss = 0.6923, error = 21.8750
+Train Set: Epoch 2, batch 314, time = 707s, loss = 1.2727, unreg loss = 0.8115, error = 31.2500
+Train Set: Epoch 2, batch 334, time = 714s, loss = 1.3357, unreg loss = 0.8781, error = 34.3750
+Train Set: Epoch 2, batch 354, time = 722s, loss = 1.1887, unreg loss = 0.7341, error = 26.5625
+Train Set: Epoch 2, batch 374, time = 730s, loss = 1.2336, unreg loss = 0.7822, error = 23.4375
+Train Set: Epoch 2, batch 394, time = 738s, loss = 1.0286, unreg loss = 0.5796, error = 21.8750
+Train Set: Epoch 2, batch 414, time = 745s, loss = 1.2873, unreg loss = 0.8410, error = 32.8125
+Train Set: Epoch 2, batch 434, time = 753s, loss = 1.6216, unreg loss = 1.1781, error = 37.5000
+Train Set: Epoch 2, batch 454, time = 761s, loss = 1.1842, unreg loss = 0.7436, error = 26.5625
+Train Set: Epoch 2, batch 474, time = 768s, loss = 1.4571, unreg loss = 1.0193, error = 35.9375
+Train Set: Epoch 2, batch 494, time = 776s, loss = 1.1562, unreg loss = 0.7212, error = 25.0000
+Train Set: Epoch 2, batch 514, time = 784s, loss = 1.2741, unreg loss = 0.8417, error = 31.2500
+Train Set: Epoch 2, batch 534, time = 792s, loss = 1.2782, unreg loss = 0.8483, error = 35.9375
+Train Set: Epoch 2, batch 554, time = 799s, loss = 1.1510, unreg loss = 0.7239, error = 25.0000
+Train Set: Epoch 2, batch 574, time = 807s, loss = 1.2393, unreg loss = 0.8145, error = 32.8125
+Train Set: Epoch 2, batch 594, time = 815s, loss = 1.2169, unreg loss = 0.7949, error = 21.8750
+Train Set: Epoch 2, batch 614, time = 822s, loss = 1.3082, unreg loss = 0.8884, error = 29.6875
+Train Set: Epoch 2, batch 634, time = 830s, loss = 1.2080, unreg loss = 0.7911, error = 37.5000
+Train Set: Epoch 2, batch 654, time = 838s, loss = 1.1623, unreg loss = 0.7480, error = 29.6875
+Train Set: Epoch 2, batch 674, time = 845s, loss = 1.1666, unreg loss = 0.7550, error = 26.5625
+Train Set: Epoch 2, batch 694, time = 853s, loss = 1.2345, unreg loss = 0.8254, error = 34.3750
+Eval on Train Set: Epoch 2, batch 702, time = 859s, loss = 1.3361, unreg loss = 0.9280, error = 25.0000
+Eval on Valid Set: Epoch 2, batch 702, time = 862s, loss = 1.0057, error = 28.1000
+Eval on Test Set: Epoch 2, batch 702, time = 865s, loss = 1.0616, error = 30.6000
+Train Set: Epoch 3, batch 11, time = 884s, loss = 0.9193, unreg loss = 0.5121, error = 18.7500
+Train Set: Epoch 3, batch 31, time = 892s, loss = 1.0637, unreg loss = 0.6589, error = 25.0000
+Train Set: Epoch 3, batch 51, time = 899s, loss = 1.1267, unreg loss = 0.7242, error = 20.3125
+Train Set: Epoch 3, batch 71, time = 907s, loss = 1.4358, unreg loss = 1.0357, error = 37.5000
+Train Set: Epoch 3, batch 91, time = 915s, loss = 0.9399, unreg loss = 0.5416, error = 18.7500
+Train Set: Epoch 3, batch 111, time = 922s, loss = 1.0850, unreg loss = 0.6888, error = 21.8750
+Train Set: Epoch 3, batch 131, time = 930s, loss = 1.2708, unreg loss = 0.8769, error = 35.9375
+Train Set: Epoch 3, batch 151, time = 938s, loss = 1.0991, unreg loss = 0.7074, error = 28.1250
+Train Set: Epoch 3, batch 171, time = 945s, loss = 0.9453, unreg loss = 0.5553, error = 21.8750
+Train Set: Epoch 3, batch 191, time = 953s, loss = 1.0286, unreg loss = 0.6407, error = 23.4375
+Train Set: Epoch 3, batch 211, time = 961s, loss = 1.0788, unreg loss = 0.6931, error = 21.8750
+Train Set: Epoch 3, batch 231, time = 969s, loss = 1.2750, unreg loss = 0.8906, error = 32.8125
+Train Set: Epoch 3, batch 251, time = 976s, loss = 1.2552, unreg loss = 0.8727, error = 29.6875
+Train Set: Epoch 3, batch 271, time = 984s, loss = 1.0577, unreg loss = 0.6767, error = 23.4375
+Train Set: Epoch 3, batch 291, time = 992s, loss = 1.1073, unreg loss = 0.7282, error = 23.4375
+Train Set: Epoch 3, batch 311, time = 999s, loss = 1.3424, unreg loss = 0.9652, error = 34.3750
+Train Set: Epoch 3, batch 331, time = 1007s, loss = 0.9656, unreg loss = 0.5901, error = 20.3125
+Train Set: Epoch 3, batch 351, time = 1015s, loss = 1.2477, unreg loss = 0.8738, error = 34.3750
+Train Set: Epoch 3, batch 371, time = 1023s, loss = 0.9125, unreg loss = 0.5399, error = 20.3125
+Train Set: Epoch 3, batch 391, time = 1030s, loss = 1.0191, unreg loss = 0.6475, error = 32.8125
+Train Set: Epoch 3, batch 411, time = 1038s, loss = 1.0703, unreg loss = 0.6997, error = 25.0000
+Train Set: Epoch 3, batch 431, time = 1046s, loss = 1.0399, unreg loss = 0.6704, error = 21.8750
+Train Set: Epoch 3, batch 451, time = 1053s, loss = 1.0686, unreg loss = 0.7002, error = 31.2500
+Train Set: Epoch 3, batch 471, time = 1061s, loss = 0.8702, unreg loss = 0.5031, error = 21.8750
+Train Set: Epoch 3, batch 491, time = 1069s, loss = 1.1663, unreg loss = 0.8003, error = 25.0000
+Train Set: Epoch 3, batch 511, time = 1077s, loss = 0.9017, unreg loss = 0.5371, error = 17.1875
+Train Set: Epoch 3, batch 531, time = 1084s, loss = 0.9981, unreg loss = 0.6346, error = 21.8750
+Train Set: Epoch 3, batch 551, time = 1092s, loss = 1.2176, unreg loss = 0.8550, error = 31.2500
+Train Set: Epoch 3, batch 571, time = 1100s, loss = 1.1236, unreg loss = 0.7623, error = 29.6875
+Train Set: Epoch 3, batch 591, time = 1107s, loss = 0.9086, unreg loss = 0.5490, error = 20.3125
+Train Set: Epoch 3, batch 611, time = 1115s, loss = 1.0573, unreg loss = 0.6988, error = 21.8750
+Train Set: Epoch 3, batch 631, time = 1123s, loss = 1.0097, unreg loss = 0.6526, error = 20.3125
+Train Set: Epoch 3, batch 651, time = 1131s, loss = 1.0717, unreg loss = 0.7159, error = 26.5625
+Train Set: Epoch 3, batch 671, time = 1138s, loss = 1.2053, unreg loss = 0.8508, error = 25.0000
+Train Set: Epoch 3, batch 691, time = 1146s, loss = 0.9946, unreg loss = 0.6415, error = 29.6875
+Eval on Train Set: Epoch 3, batch 702, time = 1153s, loss = 1.0367, unreg loss = 0.6839, error = 21.0000
+Eval on Valid Set: Epoch 3, batch 702, time = 1156s, loss = 0.7365, error = 22.6000
+Eval on Test Set: Epoch 3, batch 702, time = 1159s, loss = 0.6836, error = 22.7000
+Train Set: Epoch 4, batch 8, time = 1178s, loss = 0.9663, unreg loss = 0.6139, error = 18.7500
+Train Set: Epoch 4, batch 28, time = 1186s, loss = 0.9094, unreg loss = 0.5582, error = 20.3125
+Train Set: Epoch 4, batch 48, time = 1194s, loss = 1.1231, unreg loss = 0.7731, error = 29.6875
+Train Set: Epoch 4, batch 68, time = 1201s, loss = 1.2929, unreg loss = 0.9443, error = 25.0000
+Train Set: Epoch 4, batch 88, time = 1209s, loss = 0.8799, unreg loss = 0.5325, error = 18.7500
+Train Set: Epoch 4, batch 108, time = 1217s, loss = 0.8347, unreg loss = 0.4881, error = 15.6250
+Train Set: Epoch 4, batch 128, time = 1224s, loss = 0.9849, unreg loss = 0.6393, error = 20.3125
+Train Set: Epoch 4, batch 148, time = 1232s, loss = 1.1130, unreg loss = 0.7687, error = 25.0000
+Train Set: Epoch 4, batch 168, time = 1240s, loss = 0.9659, unreg loss = 0.6222, error = 20.3125
+Train Set: Epoch 4, batch 188, time = 1248s, loss = 1.2278, unreg loss = 0.8850, error = 31.2500
+Train Set: Epoch 4, batch 208, time = 1255s, loss = 1.0467, unreg loss = 0.7051, error = 26.5625
+Train Set: Epoch 4, batch 228, time = 1263s, loss = 0.8396, unreg loss = 0.4982, error = 25.0000
+Train Set: Epoch 4, batch 248, time = 1271s, loss = 0.9802, unreg loss = 0.6398, error = 23.4375
+Train Set: Epoch 4, batch 268, time = 1279s, loss = 1.1036, unreg loss = 0.7638, error = 28.1250
+Train Set: Epoch 4, batch 288, time = 1286s, loss = 1.0742, unreg loss = 0.7354, error = 26.5625
+Train Set: Epoch 4, batch 308, time = 1294s, loss = 1.0041, unreg loss = 0.6665, error = 25.0000
+Train Set: Epoch 4, batch 328, time = 1302s, loss = 1.0731, unreg loss = 0.7360, error = 25.0000
+Train Set: Epoch 4, batch 348, time = 1309s, loss = 0.9700, unreg loss = 0.6336, error = 20.3125
+Train Set: Epoch 4, batch 368, time = 1317s, loss = 1.0356, unreg loss = 0.6997, error = 21.8750
+Train Set: Epoch 4, batch 388, time = 1325s, loss = 1.0476, unreg loss = 0.7121, error = 28.1250
+Train Set: Epoch 4, batch 408, time = 1333s, loss = 0.8984, unreg loss = 0.5632, error = 18.7500
+Train Set: Epoch 4, batch 428, time = 1340s, loss = 1.0988, unreg loss = 0.7642, error = 21.8750
+Train Set: Epoch 4, batch 448, time = 1348s, loss = 1.0356, unreg loss = 0.7016, error = 18.7500
+Train Set: Epoch 4, batch 468, time = 1356s, loss = 1.0481, unreg loss = 0.7145, error = 21.8750
+Train Set: Epoch 4, batch 488, time = 1363s, loss = 1.1404, unreg loss = 0.8072, error = 31.2500
+Train Set: Epoch 4, batch 508, time = 1371s, loss = 1.0088, unreg loss = 0.6764, error = 20.3125
+Train Set: Epoch 4, batch 528, time = 1379s, loss = 0.9677, unreg loss = 0.6362, error = 15.6250
+Train Set: Epoch 4, batch 548, time = 1387s, loss = 0.7960, unreg loss = 0.4651, error = 18.7500
+Train Set: Epoch 4, batch 568, time = 1394s, loss = 1.0558, unreg loss = 0.7256, error = 20.3125
+Train Set: Epoch 4, batch 588, time = 1402s, loss = 1.0441, unreg loss = 0.7148, error = 26.5625
+Train Set: Epoch 4, batch 608, time = 1410s, loss = 1.1043, unreg loss = 0.7753, error = 18.7500
+Train Set: Epoch 4, batch 628, time = 1417s, loss = 0.9690, unreg loss = 0.6407, error = 20.3125
+Train Set: Epoch 4, batch 648, time = 1425s, loss = 0.8375, unreg loss = 0.5098, error = 14.0625
+Train Set: Epoch 4, batch 668, time = 1433s, loss = 1.0351, unreg loss = 0.7079, error = 21.8750
+Train Set: Epoch 4, batch 688, time = 1441s, loss = 0.9642, unreg loss = 0.6381, error = 28.1250
+Eval on Train Set: Epoch 4, batch 702, time = 1449s, loss = 1.1872, unreg loss = 0.8612, error = 20.0000
+Eval on Valid Set: Epoch 4, batch 702, time = 1451s, loss = 0.8344, error = 21.4000
+Eval on Test Set: Epoch 4, batch 702, time = 1454s, loss = 0.7943, error = 20.7000
+Train Set: Epoch 5, batch 5, time = 1474s, loss = 0.8076, unreg loss = 0.4817, error = 14.0625
+Train Set: Epoch 5, batch 25, time = 1481s, loss = 0.7650, unreg loss = 0.4395, error = 12.5000
+Train Set: Epoch 5, batch 45, time = 1489s, loss = 1.0164, unreg loss = 0.6912, error = 18.7500
+Train Set: Epoch 5, batch 65, time = 1497s, loss = 1.0075, unreg loss = 0.6827, error = 26.5625
+Train Set: Epoch 5, batch 85, time = 1504s, loss = 0.9419, unreg loss = 0.6176, error = 20.3125
+Train Set: Epoch 5, batch 105, time = 1512s, loss = 1.1057, unreg loss = 0.7815, error = 25.0000
+Train Set: Epoch 5, batch 125, time = 1520s, loss = 0.8542, unreg loss = 0.5306, error = 15.6250
+Train Set: Epoch 5, batch 145, time = 1527s, loss = 0.9296, unreg loss = 0.6063, error = 18.7500
+Train Set: Epoch 5, batch 165, time = 1535s, loss = 1.2101, unreg loss = 0.8871, error = 26.5625
+Train Set: Epoch 5, batch 185, time = 1543s, loss = 1.1391, unreg loss = 0.8166, error = 35.9375
+Train Set: Epoch 5, batch 205, time = 1551s, loss = 1.1288, unreg loss = 0.8071, error = 31.2500
+Train Set: Epoch 5, batch 225, time = 1558s, loss = 1.0593, unreg loss = 0.7378, error = 28.1250
+Train Set: Epoch 5, batch 245, time = 1566s, loss = 0.7953, unreg loss = 0.4741, error = 15.6250
+Train Set: Epoch 5, batch 265, time = 1574s, loss = 1.0317, unreg loss = 0.7110, error = 23.4375
+Train Set: Epoch 5, batch 285, time = 1581s, loss = 0.7891, unreg loss = 0.4692, error = 15.6250
+Train Set: Epoch 5, batch 305, time = 1589s, loss = 1.0021, unreg loss = 0.6827, error = 23.4375
+Train Set: Epoch 5, batch 325, time = 1597s, loss = 0.9300, unreg loss = 0.6108, error = 20.3125
+Train Set: Epoch 5, batch 345, time = 1604s, loss = 0.9200, unreg loss = 0.6008, error = 21.8750
+Train Set: Epoch 5, batch 365, time = 1612s, loss = 0.7499, unreg loss = 0.4309, error = 20.3125
+Train Set: Epoch 5, batch 385, time = 1620s, loss = 1.0740, unreg loss = 0.7548, error = 26.5625
+Train Set: Epoch 5, batch 405, time = 1628s, loss = 0.9069, unreg loss = 0.5874, error = 17.1875
+Train Set: Epoch 5, batch 425, time = 1635s, loss = 1.1567, unreg loss = 0.8369, error = 31.2500
+Train Set: Epoch 5, batch 445, time = 1643s, loss = 0.6908, unreg loss = 0.3710, error = 14.0625
+Train Set: Epoch 5, batch 465, time = 1651s, loss = 1.0950, unreg loss = 0.7750, error = 29.6875
+Train Set: Epoch 5, batch 485, time = 1658s, loss = 1.1928, unreg loss = 0.8724, error = 28.1250
+Train Set: Epoch 5, batch 505, time = 1666s, loss = 0.8731, unreg loss = 0.5533, error = 18.7500
+Train Set: Epoch 5, batch 525, time = 1674s, loss = 0.7901, unreg loss = 0.4706, error = 15.6250
+Train Set: Epoch 5, batch 545, time = 1682s, loss = 0.9337, unreg loss = 0.6143, error = 21.8750
+Train Set: Epoch 5, batch 565, time = 1689s, loss = 0.8406, unreg loss = 0.5211, error = 23.4375
+Train Set: Epoch 5, batch 585, time = 1697s, loss = 1.0308, unreg loss = 0.7119, error = 23.4375
+Train Set: Epoch 5, batch 605, time = 1705s, loss = 0.8401, unreg loss = 0.5207, error = 15.6250
+Train Set: Epoch 5, batch 625, time = 1712s, loss = 0.9279, unreg loss = 0.6084, error = 18.7500
+Train Set: Epoch 5, batch 645, time = 1720s, loss = 1.0351, unreg loss = 0.7155, error = 26.5625
+Train Set: Epoch 5, batch 665, time = 1728s, loss = 0.9917, unreg loss = 0.6726, error = 21.8750
+Train Set: Epoch 5, batch 685, time = 1736s, loss = 0.9823, unreg loss = 0.6636, error = 25.0000
+Eval on Train Set: Epoch 5, batch 702, time = 1745s, loss = 1.0677, unreg loss = 0.7487, error = 18.7000
+Eval on Valid Set: Epoch 5, batch 702, time = 1748s, loss = 0.7294, error = 19.8000
+Eval on Test Set: Epoch 5, batch 702, time = 1750s, loss = 0.6808, error = 18.3000
+
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+Train Set: Epoch 18, batch 626, time = 5744s, loss = 0.6885, unreg loss = 0.2981, error = 12.5000
+Train Set: Epoch 18, batch 646, time = 5752s, loss = 1.2678, unreg loss = 0.8776, error = 29.6875
+Train Set: Epoch 18, batch 666, time = 5759s, loss = 0.7161, unreg loss = 0.3263, error = 10.9375
+Train Set: Epoch 18, batch 686, time = 5767s, loss = 0.9441, unreg loss = 0.5546, error = 25.0000
+Eval on Train Set: Epoch 18, batch 702, time = 5776s, loss = 0.9177, unreg loss = 0.5278, error = 14.6000
+Eval on Valid Set: Epoch 18, batch 702, time = 5779s, loss = 0.5841, error = 17.0000
+Eval on Test Set: Epoch 18, batch 702, time = 5782s, loss = 0.5892, error = 15.7000
+Train Set: Epoch 19, batch 3, time = 5820s, loss = 0.7855, unreg loss = 0.3956, error = 14.0625
+Train Set: Epoch 19, batch 23, time = 5828s, loss = 0.9892, unreg loss = 0.5995, error = 20.3125
+Train Set: Epoch 19, batch 43, time = 5836s, loss = 0.8960, unreg loss = 0.5064, error = 21.8750
+Train Set: Epoch 19, batch 63, time = 5844s, loss = 0.8435, unreg loss = 0.4539, error = 15.6250
+Train Set: Epoch 19, batch 83, time = 5851s, loss = 0.9125, unreg loss = 0.5229, error = 20.3125
+
+
+
+
+...
+
+
+
+...
+
+
+
+
+
+
+
+Eval on Train Set: Epoch 28, batch 702, time = 9016s, loss = 0.8789, unreg loss = 0.4724, error = 15.0000
+Eval on Valid Set: Epoch 28, batch 702, time = 9019s, loss = 0.5690, error = 17.8000
+Eval on Test Set: Epoch 28, batch 702, time = 9022s, loss = 0.5097, error = 16.0000
+Train Set: Epoch 29, batch 13, time = 9071s, loss = 1.0215, unreg loss = 0.6148, error = 20.3125
+Train Set: Epoch 29, batch 33, time = 9078s, loss = 0.8889, unreg loss = 0.4818, error = 18.7500
+Train Set: Epoch 29, batch 53, time = 9086s, loss = 0.8149, unreg loss = 0.4078, error = 17.1875
+Train Set: Epoch 29, batch 73, time = 9094s, loss = 0.9020, unreg loss = 0.4955, error = 18.7500
+Train Set: Epoch 29, batch 93, time = 9102s, loss = 0.8435, unreg loss = 0.4369, error = 14.0625
+Train Set: Epoch 29, batch 113, time = 9109s, loss = 0.7826, unreg loss = 0.3761, error = 18.7500
+Train Set: Epoch 29, batch 133, time = 9117s, loss = 0.6768, unreg loss = 0.2702, error = 9.3750
+Train Set: Epoch 29, batch 153, time = 9125s, loss = 0.9056, unreg loss = 0.4992, error = 14.0625
+Train Set: Epoch 29, batch 173, time = 9132s, loss = 0.8454, unreg loss = 0.4387, error = 18.7500
+Train Set: Epoch 29, batch 193, time = 9140s, loss = 0.9896, unreg loss = 0.5832, error = 23.4375
+Train Set: Epoch 29, batch 213, time = 9148s, loss = 0.7073, unreg loss = 0.3010, error = 9.3750
+Train Set: Epoch 29, batch 233, time = 9155s, loss = 0.7586, unreg loss = 0.3516, error = 14.0625
+Train Set: Epoch 29, batch 253, time = 9163s, loss = 0.8292, unreg loss = 0.4214, error = 12.5000
+Train Set: Epoch 29, batch 273, time = 9171s, loss = 0.8152, unreg loss = 0.4071, error = 12.5000
+Train Set: Epoch 29, batch 293, time = 9178s, loss = 0.8755, unreg loss = 0.4672, error = 15.6250
+Train Set: Epoch 29, batch 313, time = 9186s, loss = 0.9016, unreg loss = 0.4933, error = 20.3125
+Train Set: Epoch 29, batch 333, time = 9194s, loss = 0.9790, unreg loss = 0.5707, error = 20.3125
+Train Set: Epoch 29, batch 353, time = 9202s, loss = 0.8066, unreg loss = 0.3980, error = 12.5000
+Train Set: Epoch 29, batch 373, time = 9209s, loss = 0.8245, unreg loss = 0.4153, error = 12.5000
+Train Set: Epoch 29, batch 393, time = 9217s, loss = 0.7422, unreg loss = 0.3327, error = 10.9375
+Train Set: Epoch 29, batch 413, time = 9225s, loss = 0.8618, unreg loss = 0.4526, error = 17.1875
+Train Set: Epoch 29, batch 433, time = 9232s, loss = 0.9562, unreg loss = 0.5469, error = 20.3125
+Train Set: Epoch 29, batch 453, time = 9240s, loss = 0.8593, unreg loss = 0.4497, error = 14.0625
+Train Set: Epoch 29, batch 473, time = 9248s, loss = 0.6753, unreg loss = 0.2653, error = 9.3750
+Train Set: Epoch 29, batch 493, time = 9255s, loss = 0.6381, unreg loss = 0.2281, error = 9.3750
+Train Set: Epoch 29, batch 513, time = 9263s, loss = 0.9037, unreg loss = 0.4939, error = 17.1875
+Train Set: Epoch 29, batch 533, time = 9271s, loss = 0.8826, unreg loss = 0.4724, error = 15.6250
+Train Set: Epoch 29, batch 553, time = 9278s, loss = 0.7502, unreg loss = 0.3398, error = 12.5000
+Train Set: Epoch 29, batch 573, time = 9286s, loss = 0.7447, unreg loss = 0.3338, error = 10.9375
+Train Set: Epoch 29, batch 593, time = 9294s, loss = 0.8431, unreg loss = 0.4325, error = 15.6250
+Train Set: Epoch 29, batch 613, time = 9302s, loss = 0.8183, unreg loss = 0.4079, error = 12.5000
+Train Set: Epoch 29, batch 633, time = 9309s, loss = 0.8437, unreg loss = 0.4335, error = 14.0625
+Train Set: Epoch 29, batch 653, time = 9317s, loss = 0.7306, unreg loss = 0.3209, error = 10.9375
+Train Set: Epoch 29, batch 673, time = 9325s, loss = 0.7352, unreg loss = 0.3258, error = 12.5000
+Train Set: Epoch 29, batch 693, time = 9332s, loss = 0.8902, unreg loss = 0.4806, error = 12.5000
+Eval on Train Set: Epoch 29, batch 702, time = 9339s, loss = 0.8746, unreg loss = 0.4648, error = 14.8000
+Eval on Valid Set: Epoch 29, batch 702, time = 9341s, loss = 0.5227, error = 18.3000
+Eval on Test Set: Epoch 29, batch 702, time = 9344s, loss = 0.4989, error = 17.3000
+Train Set: Epoch 30, batch 10, time = 9394s, loss = 0.8459, unreg loss = 0.4355, error = 18.7500
+Train Set: Epoch 30, batch 30, time = 9401s, loss = 0.8629, unreg loss = 0.4523, error = 20.3125
+Train Set: Epoch 30, batch 50, time = 9409s, loss = 0.8293, unreg loss = 0.4191, error = 9.3750
+Train Set: Epoch 30, batch 70, time = 9417s, loss = 0.6140, unreg loss = 0.2043, error = 7.8125
+Train Set: Epoch 30, batch 90, time = 9424s, loss = 0.9705, unreg loss = 0.5613, error = 17.1875
+Train Set: Epoch 30, batch 110, time = 9432s, loss = 0.7245, unreg loss = 0.3157, error = 10.9375
+Train Set: Epoch 30, batch 130, time = 9440s, loss = 0.6732, unreg loss = 0.2648, error = 9.3750
+Train Set: Epoch 30, batch 150, time = 9447s, loss = 0.8551, unreg loss = 0.4471, error = 18.7500
+Train Set: Epoch 30, batch 170, time = 9455s, loss = 0.6687, unreg loss = 0.2612, error = 7.8125
+Train Set: Epoch 30, batch 190, time = 9463s, loss = 0.6491, unreg loss = 0.2420, error = 9.3750
+Train Set: Epoch 30, batch 210, time = 9470s, loss = 0.7694, unreg loss = 0.3629, error = 14.0625
+Train Set: Epoch 30, batch 230, time = 9478s, loss = 0.6621, unreg loss = 0.2560, error = 12.5000
+Train Set: Epoch 30, batch 250, time = 9486s, loss = 0.6716, unreg loss = 0.2659, error = 10.9375
+Train Set: Epoch 30, batch 270, time = 9493s, loss = 0.6344, unreg loss = 0.2292, error = 9.3750
+Train Set: Epoch 30, batch 290, time = 9501s, loss = 0.7406, unreg loss = 0.3358, error = 9.3750
+Train Set: Epoch 30, batch 310, time = 9509s, loss = 0.6385, unreg loss = 0.2342, error = 7.8125
+Train Set: Epoch 30, batch 330, time = 9516s, loss = 0.6882, unreg loss = 0.2843, error = 7.8125
+Train Set: Epoch 30, batch 350, time = 9524s, loss = 0.7436, unreg loss = 0.3402, error = 10.9375
+Train Set: Epoch 30, batch 370, time = 9532s, loss = 0.6742, unreg loss = 0.2713, error = 7.8125
+Train Set: Epoch 30, batch 390, time = 9539s, loss = 0.6152, unreg loss = 0.2127, error = 7.8125
+Train Set: Epoch 30, batch 410, time = 9547s, loss = 0.6515, unreg loss = 0.2495, error = 9.3750
+Train Set: Epoch 30, batch 430, time = 9555s, loss = 0.6178, unreg loss = 0.2162, error = 7.8125
+Train Set: Epoch 30, batch 450, time = 9562s, loss = 0.5526, unreg loss = 0.1514, error = 4.6875
+Train Set: Epoch 30, batch 470, time = 9570s, loss = 0.5866, unreg loss = 0.1859, error = 4.6875
+Train Set: Epoch 30, batch 490, time = 9578s, loss = 0.6447, unreg loss = 0.2444, error = 7.8125
+Train Set: Epoch 30, batch 510, time = 9586s, loss = 0.6862, unreg loss = 0.2864, error = 9.3750
+Train Set: Epoch 30, batch 530, time = 9593s, loss = 0.6824, unreg loss = 0.2830, error = 9.3750
+Train Set: Epoch 30, batch 550, time = 9601s, loss = 0.6952, unreg loss = 0.2963, error = 9.3750
+Train Set: Epoch 30, batch 570, time = 9609s, loss = 0.6290, unreg loss = 0.2304, error = 10.9375
+Train Set: Epoch 30, batch 590, time = 9616s, loss = 0.5156, unreg loss = 0.1175, error = 6.2500
+Train Set: Epoch 30, batch 610, time = 9624s, loss = 0.6125, unreg loss = 0.2149, error = 7.8125
+Train Set: Epoch 30, batch 630, time = 9632s, loss = 0.5978, unreg loss = 0.2005, error = 7.8125
+Train Set: Epoch 30, batch 650, time = 9639s, loss = 0.5240, unreg loss = 0.1271, error = 1.5625
+Train Set: Epoch 30, batch 670, time = 9647s, loss = 0.4983, unreg loss = 0.1018, error = 3.1250
+Train Set: Epoch 30, batch 690, time = 9655s, loss = 0.5551, unreg loss = 0.1591, error = 6.2500
+Eval on Train Set: Epoch 30, batch 702, time = 9662s, loss = 0.5880, unreg loss = 0.1922, error = 5.0000
+Eval on Valid Set: Epoch 30, batch 702, time = 9665s, loss = 0.3373, error = 11.0000
+Eval on Test Set: Epoch 30, batch 702, time = 9668s, loss = 0.3535, error = 12.6000
+Train Set: Epoch 31, batch 7, time = 9716s, loss = 0.6770, unreg loss = 0.2814, error = 10.9375
+Train Set: Epoch 31, batch 27, time = 9724s, loss = 0.6279, unreg loss = 0.2327, error = 9.3750
+Train Set: Epoch 31, batch 47, time = 9732s, loss = 0.5505, unreg loss = 0.1558, error = 6.2500
+Train Set: Epoch 31, batch 67, time = 9739s, loss = 0.5153, unreg loss = 0.1211, error = 3.1250
+Train Set: Epoch 31, batch 87, time = 9747s, loss = 0.5409, unreg loss = 0.1472, error = 3.1250
+Train Set: Epoch 31, batch 107, time = 9755s, loss = 0.6759, unreg loss = 0.2826, error = 12.5000
+Train Set: Epoch 31, batch 127, time = 9762s, loss = 0.6424, unreg loss = 0.2496, error = 9.3750
+Train Set: Epoch 31, batch 147, time = 9770s, loss = 0.5991, unreg loss = 0.2067, error = 7.8125
+Train Set: Epoch 31, batch 167, time = 9778s, loss = 0.6404, unreg loss = 0.2484, error = 3.1250
+Train Set: Epoch 31, batch 187, time = 9785s, loss = 0.5333, unreg loss = 0.1418, error = 4.6875
+Train Set: Epoch 31, batch 207, time = 9793s, loss = 0.6713, unreg loss = 0.2803, error = 9.3750
+Train Set: Epoch 31, batch 227, time = 9801s, loss = 0.6303, unreg loss = 0.2398, error = 7.8125
+Train Set: Epoch 31, batch 247, time = 9808s, loss = 0.5765, unreg loss = 0.1863, error = 6.2500
+Train Set: Epoch 31, batch 267, time = 9816s, loss = 0.6002, unreg loss = 0.2105, error = 9.3750
+Train Set: Epoch 31, batch 287, time = 9824s, loss = 0.6236, unreg loss = 0.2344, error = 4.6875
+Train Set: Epoch 31, batch 307, time = 9832s, loss = 0.5672, unreg loss = 0.1784, error = 6.2500
+Train Set: Epoch 31, batch 327, time = 9839s, loss = 0.6285, unreg loss = 0.2401, error = 10.9375
+Train Set: Epoch 31, batch 347, time = 9847s, loss = 0.6501, unreg loss = 0.2621, error = 6.2500
+Train Set: Epoch 31, batch 367, time = 9855s, loss = 0.6375, unreg loss = 0.2501, error = 10.9375
+Train Set: Epoch 31, batch 387, time = 9862s, loss = 0.6719, unreg loss = 0.2849, error = 9.3750
+Train Set: Epoch 31, batch 407, time = 9870s, loss = 0.6760, unreg loss = 0.2894, error = 15.6250
+Train Set: Epoch 31, batch 427, time = 9878s, loss = 0.6753, unreg loss = 0.2891, error = 12.5000
+Train Set: Epoch 31, batch 447, time = 9886s, loss = 0.5602, unreg loss = 0.1744, error = 6.2500
+Train Set: Epoch 31, batch 467, time = 9893s, loss = 0.7179, unreg loss = 0.3326, error = 15.6250
+Train Set: Epoch 31, batch 487, time = 9901s, loss = 0.6691, unreg loss = 0.2842, error = 7.8125
+Train Set: Epoch 31, batch 507, time = 9909s, loss = 0.5581, unreg loss = 0.1737, error = 7.8125
+Train Set: Epoch 31, batch 527, time = 9917s, loss = 0.5237, unreg loss = 0.1397, error = 4.6875
+Train Set: Epoch 31, batch 547, time = 9924s, loss = 0.5717, unreg loss = 0.1881, error = 7.8125
+Train Set: Epoch 31, batch 567, time = 9932s, loss = 0.5778, unreg loss = 0.1946, error = 6.2500
+Train Set: Epoch 31, batch 587, time = 9940s, loss = 0.6012, unreg loss = 0.2184, error = 7.8125
+Train Set: Epoch 31, batch 607, time = 9948s, loss = 0.4580, unreg loss = 0.0756, error = 1.5625
+Train Set: Epoch 31, batch 627, time = 9955s, loss = 0.6095, unreg loss = 0.2275, error = 7.8125
+Train Set: Epoch 31, batch 647, time = 9963s, loss = 0.4967, unreg loss = 0.1151, error = 1.5625
+Train Set: Epoch 31, batch 667, time = 9971s, loss = 0.4613, unreg loss = 0.0801, error = 0.0000
+Train Set: Epoch 31, batch 687, time = 9979s, loss = 0.4880, unreg loss = 0.1072, error = 1.5625
+Eval on Train Set: Epoch 31, batch 702, time = 9987s, loss = 0.5531, unreg loss = 0.1726, error = 5.1000
+Eval on Valid Set: Epoch 31, batch 702, time = 9990s, loss = 0.3173, error = 12.3000
+Eval on Test Set: Epoch 31, batch 702, time = 9993s, loss = 0.3092, error = 10.8000
+Train Set: Epoch 32, batch 4, time = 10050s, loss = 0.5328, unreg loss = 0.1524, error = 4.6875
+Train Set: Epoch 32, batch 24, time = 10058s, loss = 0.6118, unreg loss = 0.2319, error = 6.2500
+Train Set: Epoch 32, batch 44, time = 10066s, loss = 0.6511, unreg loss = 0.2716, error = 7.8125
+Train Set: Epoch 32, batch 64, time = 10073s, loss = 0.6286, unreg loss = 0.2495, error = 9.3750
+Train Set: Epoch 32, batch 84, time = 10081s, loss = 0.6062, unreg loss = 0.2276, error = 4.6875
+Train Set: Epoch 32, batch 104, time = 10089s, loss = 0.5508, unreg loss = 0.1726, error = 4.6875
+Train Set: Epoch 32, batch 124, time = 10097s, loss = 0.5533, unreg loss = 0.1756, error = 7.8125
+Train Set: Epoch 32, batch 144, time = 10104s, loss = 0.6700, unreg loss = 0.2927, error = 12.5000
+Train Set: Epoch 32, batch 164, time = 10112s, loss = 0.5332, unreg loss = 0.1564, error = 6.2500
+Train Set: Epoch 32, batch 184, time = 10120s, loss = 0.6088, unreg loss = 0.2324, error = 7.8125
+Train Set: Epoch 32, batch 204, time = 10128s, loss = 0.7363, unreg loss = 0.3603, error = 9.3750
+Train Set: Epoch 32, batch 224, time = 10135s, loss = 0.5947, unreg loss = 0.2192, error = 9.3750
+Train Set: Epoch 32, batch 244, time = 10143s, loss = 0.5404, unreg loss = 0.1652, error = 7.8125
+Train Set: Epoch 32, batch 264, time = 10151s, loss = 0.4722, unreg loss = 0.0975, error = 6.2500
+Train Set: Epoch 32, batch 284, time = 10159s, loss = 0.5720, unreg loss = 0.1977, error = 9.3750
+Train Set: Epoch 32, batch 304, time = 10167s, loss = 0.4912, unreg loss = 0.1173, error = 4.6875
+Train Set: Epoch 32, batch 324, time = 10174s, loss = 0.6852, unreg loss = 0.3117, error = 12.5000
+Train Set: Epoch 32, batch 344, time = 10182s, loss = 0.4972, unreg loss = 0.1242, error = 4.6875
+Train Set: Epoch 32, batch 364, time = 10190s, loss = 0.5120, unreg loss = 0.1395, error = 3.1250
+Train Set: Epoch 32, batch 384, time = 10198s, loss = 0.5663, unreg loss = 0.1941, error = 4.6875
+Train Set: Epoch 32, batch 404, time = 10205s, loss = 0.5094, unreg loss = 0.1376, error = 3.1250
+Train Set: Epoch 32, batch 424, time = 10213s, loss = 0.6101, unreg loss = 0.2387, error = 7.8125
+Train Set: Epoch 32, batch 444, time = 10221s, loss = 0.5659, unreg loss = 0.1949, error = 4.6875
+Train Set: Epoch 32, batch 464, time = 10229s, loss = 0.5387, unreg loss = 0.1681, error = 7.8125
+Train Set: Epoch 32, batch 484, time = 10237s, loss = 0.4883, unreg loss = 0.1181, error = 3.1250
+Train Set: Epoch 32, batch 504, time = 10244s, loss = 0.6511, unreg loss = 0.2813, error = 6.2500
+Train Set: Epoch 32, batch 524, time = 10252s, loss = 0.6156, unreg loss = 0.2462, error = 10.9375
+Train Set: Epoch 32, batch 544, time = 10260s, loss = 0.6188, unreg loss = 0.2499, error = 9.3750
+Train Set: Epoch 32, batch 564, time = 10268s, loss = 0.5353, unreg loss = 0.1667, error = 7.8125
+Train Set: Epoch 32, batch 584, time = 10275s, loss = 0.4094, unreg loss = 0.0412, error = 0.0000
+Train Set: Epoch 32, batch 604, time = 10283s, loss = 0.4819, unreg loss = 0.1141, error = 4.6875
+Train Set: Epoch 32, batch 624, time = 10291s, loss = 0.4711, unreg loss = 0.1037, error = 4.6875
+Train Set: Epoch 32, batch 644, time = 10299s, loss = 0.5799, unreg loss = 0.2129, error = 7.8125
+Train Set: Epoch 32, batch 664, time = 10307s, loss = 0.4783, unreg loss = 0.1117, error = 1.5625
+Train Set: Epoch 32, batch 684, time = 10314s, loss = 0.4390, unreg loss = 0.0728, error = 1.5625
+Eval on Train Set: Epoch 32, batch 702, time = 10324s, loss = 0.5277, unreg loss = 0.1619, error = 5.4000
+Eval on Valid Set: Epoch 32, batch 702, time = 10327s, loss = 0.2955, error = 10.0000
+Eval on Test Set: Epoch 32, batch 702, time = 10330s, loss = 0.3190, error = 11.3000
+
+
+
+
+...
+
+
+
+...
+
+
+
+...
+
+
+
+
+
+1, error = 3.1250
+Train Set: Epoch 58, batch 666, time = 19104s, loss = 0.3696, unreg loss = 0.1539, error = 6.2500
+Train Set: Epoch 58, batch 686, time = 19111s, loss = 0.4439, unreg loss = 0.2283, error = 9.3750
+Eval on Train Set: Epoch 58, batch 702, time = 19120s, loss = 0.3445, unreg loss = 0.1289, error = 2.9000
+Eval on Valid Set: Epoch 58, batch 702, time = 19123s, loss = 0.3842, error = 11.7000
+Eval on Test Set: Epoch 58, batch 702, time = 19126s, loss = 0.3817, error = 11.4000
+Train Set: Epoch 59, batch 3, time = 19196s, loss = 0.2720, unreg loss = 0.0564, error = 1.5625
+Train Set: Epoch 59, batch 23, time = 19204s, loss = 0.3071, unreg loss = 0.0915, error = 4.6875
+Train Set: Epoch 59, batch 43, time = 19211s, loss = 0.3022, unreg loss = 0.0867, error = 3.1250
+Train Set: Epoch 59, batch 63, time = 19219s, loss = 0.3508, unreg loss = 0.1353, error = 3.1250
+Train Set: Epoch 59, batch 83, time = 19227s, loss = 0.2743, unreg loss = 0.0589, error = 1.5625
+Train Set: Epoch 59, batch 103, time = 19234s, loss = 0.3005, unreg loss = 0.0851, error = 3.1250
+Train Set: Epoch 59, batch 123, time = 19242s, loss = 0.3100, unreg loss = 0.0947, error = 3.1250
+Train Set: Epoch 59, batch 143, time = 19250s, loss = 0.3085, unreg loss = 0.0932, error = 4.6875
+Train Set: Epoch 59, batch 163, time = 19257s, loss = 0.3526, unreg loss = 0.1374, error = 3.1250
+Train Set: Epoch 59, batch 183, time = 19265s, loss = 0.3194, unreg loss = 0.1042, error = 3.1250
+Train Set: Epoch 59, batch 203, time = 19273s, loss = 0.2646, unreg loss = 0.0495, error = 0.0000
+Train Set: Epoch 59, batch 223, time = 19280s, loss = 0.2301, unreg loss = 0.0150, error = 0.0000
+Train Set: Epoch 59, batch 243, time = 19288s, loss = 0.2817, unreg loss = 0.0667, error = 1.5625
+Train Set: Epoch 59, batch 263, time = 19296s, loss = 0.3155, unreg loss = 0.1005, error = 1.5625
+Train Set: Epoch 59, batch 283, time = 19303s, loss = 0.3413, unreg loss = 0.1264, error = 7.8125
+Train Set: Epoch 59, batch 303, time = 19311s, loss = 0.2867, unreg loss = 0.0717, error = 1.5625
+Train Set: Epoch 59, batch 323, time = 19319s, loss = 0.2566, unreg loss = 0.0416, error = 1.5625
+Train Set: Epoch 59, batch 343, time = 19326s, loss = 0.3016, unreg loss = 0.0866, error = 1.5625
+Train Set: Epoch 59, batch 363, time = 19334s, loss = 0.3081, unreg loss = 0.0930, error = 1.5625
+Train Set: Epoch 59, batch 383, time = 19342s, loss = 0.3618, unreg loss = 0.1468, error = 6.2500
+Train Set: Epoch 59, batch 403, time = 19349s, loss = 0.2771, unreg loss = 0.0621, error = 3.1250
+Train Set: Epoch 59, batch 423, time = 19357s, loss = 0.2651, unreg loss = 0.0502, error = 1.5625
+Train Set: Epoch 59, batch 443, time = 19365s, loss = 0.3329, unreg loss = 0.1181, error = 4.6875
+Train Set: Epoch 59, batch 463, time = 19372s, loss = 0.2614, unreg loss = 0.0466, error = 0.0000
+Train Set: Epoch 59, batch 483, time = 19380s, loss = 0.3225, unreg loss = 0.1078, error = 6.2500
+Train Set: Epoch 59, batch 503, time = 19387s, loss = 0.3032, unreg loss = 0.0885, error = 3.1250
+Train Set: Epoch 59, batch 523, time = 19395s, loss = 0.2812, unreg loss = 0.0665, error = 1.5625
+Train Set: Epoch 59, batch 543, time = 19403s, loss = 0.2671, unreg loss = 0.0525, error = 1.5625
+Train Set: Epoch 59, batch 563, time = 19410s, loss = 0.3545, unreg loss = 0.1400, error = 6.2500
+Train Set: Epoch 59, batch 583, time = 19418s, loss = 0.2817, unreg loss = 0.0671, error = 3.1250
+Train Set: Epoch 59, batch 603, time = 19426s, loss = 0.3182, unreg loss = 0.1037, error = 4.6875
+Train Set: Epoch 59, batch 623, time = 19433s, loss = 0.2723, unreg loss = 0.0578, error = 1.5625
+Train Set: Epoch 59, batch 643, time = 19441s, loss = 0.2703, unreg loss = 0.0559, error = 1.5625
+Train Set: Epoch 59, batch 663, time = 19449s, loss = 0.2849, unreg loss = 0.0704, error = 3.1250
+Train Set: Epoch 59, batch 683, time = 19456s, loss = 0.3632, unreg loss = 0.1489, error = 7.8125
+Eval on Train Set: Epoch 59, batch 702, time = 19466s, loss = 0.3183, unreg loss = 0.1039, error = 3.4000
+Eval on Valid Set: Epoch 59, batch 702, time = 19469s, loss = 0.3658, error = 12.3000
+Eval on Test Set: Epoch 59, batch 702, time = 19472s, loss = 0.3952, error = 13.2000
+Train Set: Epoch 60, batch 0, time = 19541s, loss = 0.2749, unreg loss = 0.0606, error = 0.0000
+Train Set: Epoch 60, batch 20, time = 19549s, loss = 0.2951, unreg loss = 0.0808, error = 3.1250
+Train Set: Epoch 60, batch 40, time = 19557s, loss = 0.2456, unreg loss = 0.0314, error = 1.5625
+Train Set: Epoch 60, batch 60, time = 19564s, loss = 0.2609, unreg loss = 0.0467, error = 1.5625
+Train Set: Epoch 60, batch 80, time = 19572s, loss = 0.2536, unreg loss = 0.0395, error = 1.5625
+Train Set: Epoch 60, batch 100, time = 19579s, loss = 0.2993, unreg loss = 0.0852, error = 3.1250
+Train Set: Epoch 60, batch 120, time = 19587s, loss = 0.2891, unreg loss = 0.0751, error = 3.1250
+Train Set: Epoch 60, batch 140, time = 19595s, loss = 0.2997, unreg loss = 0.0857, error = 1.5625
+Train Set: Epoch 60, batch 160, time = 19602s, loss = 0.2921, unreg loss = 0.0781, error = 1.5625
+Train Set: Epoch 60, batch 180, time = 19610s, loss = 0.3317, unreg loss = 0.1178, error = 4.6875
+Train Set: Epoch 60, batch 200, time = 19618s, loss = 0.3718, unreg loss = 0.1579, error = 4.6875
+Train Set: Epoch 60, batch 220, time = 19625s, loss = 0.2755, unreg loss = 0.0617, error = 3.1250
+Train Set: Epoch 60, batch 240, time = 19633s, loss = 0.2653, unreg loss = 0.0514, error = 1.5625
+Train Set: Epoch 60, batch 260, time = 19641s, loss = 0.3090, unreg loss = 0.0951, error = 1.5625
+Train Set: Epoch 60, batch 280, time = 19648s, loss = 0.2978, unreg loss = 0.0841, error = 3.1250
+Train Set: Epoch 60, batch 300, time = 19656s, loss = 0.3386, unreg loss = 0.1249, error = 1.5625
+Train Set: Epoch 60, batch 320, time = 19664s, loss = 0.2684, unreg loss = 0.0548, error = 3.1250
+Train Set: Epoch 60, batch 340, time = 19671s, loss = 0.2446, unreg loss = 0.0310, error = 0.0000
+Train Set: Epoch 60, batch 360, time = 19679s, loss = 0.3660, unreg loss = 0.1524, error = 6.2500
+Train Set: Epoch 60, batch 380, time = 19687s, loss = 0.2976, unreg loss = 0.0841, error = 4.6875
+Train Set: Epoch 60, batch 400, time = 19694s, loss = 0.3068, unreg loss = 0.0934, error = 3.1250
+Train Set: Epoch 60, batch 420, time = 19702s, loss = 0.2472, unreg loss = 0.0338, error = 1.5625
+Train Set: Epoch 60, batch 440, time = 19710s, loss = 0.3363, unreg loss = 0.1228, error = 3.1250
+Train Set: Epoch 60, batch 460, time = 19717s, loss = 0.2874, unreg loss = 0.0740, error = 1.5625
+Train Set: Epoch 60, batch 480, time = 19725s, loss = 0.2802, unreg loss = 0.0668, error = 1.5625
+Train Set: Epoch 60, batch 500, time = 19733s, loss = 0.2629, unreg loss = 0.0496, error = 0.0000
+Train Set: Epoch 60, batch 520, time = 19740s, loss = 0.3212, unreg loss = 0.1080, error = 3.1250
+Train Set: Epoch 60, batch 540, time = 19748s, loss = 0.3376, unreg loss = 0.1243, error = 4.6875
+Train Set: Epoch 60, batch 560, time = 19756s, loss = 0.2914, unreg loss = 0.0781, error = 3.1250
+Train Set: Epoch 60, batch 580, time = 19763s, loss = 0.3565, unreg loss = 0.1432, error = 4.6875
+Train Set: Epoch 60, batch 600, time = 19771s, loss = 0.3278, unreg loss = 0.1145, error = 4.6875
+Train Set: Epoch 60, batch 620, time = 19779s, loss = 0.2819, unreg loss = 0.0686, error = 3.1250
+Train Set: Epoch 60, batch 640, time = 19786s, loss = 0.2494, unreg loss = 0.0361, error = 1.5625
+Train Set: Epoch 60, batch 660, time = 19794s, loss = 0.3563, unreg loss = 0.1430, error = 4.6875
+Train Set: Epoch 60, batch 680, time = 19802s, loss = 0.3231, unreg loss = 0.1099, error = 1.5625
+Train Set: Epoch 60, batch 700, time = 19809s, loss = 0.3999, unreg loss = 0.1867, error = 7.8125
+Eval on Train Set: Epoch 60, batch 702, time = 19813s, loss = 0.3578, unreg loss = 0.1446, error = 2.4000
+Eval on Valid Set: Epoch 60, batch 702, time = 19815s, loss = 0.3856, error = 12.2000
+Eval on Test Set: Epoch 60, batch 702, time = 19818s, loss = 0.4034, error = 12.6000
+Train Set: Epoch 61, batch 17, time = 19895s, loss = 0.2864, unreg loss = 0.0732, error = 1.5625
+Train Set: Epoch 61, batch 37, time = 19903s, loss = 0.2831, unreg loss = 0.0699, error = 3.1250
+Train Set: Epoch 61, batch 57, time = 19910s, loss = 0.2605, unreg loss = 0.0473, error = 1.5625
+Train Set: Epoch 61, batch 77, time = 19918s, loss = 0.2723, unreg loss = 0.0592, error = 3.1250
+Train Set: Epoch 61, batch 97, time = 19925s, loss = 0.3040, unreg loss = 0.0910, error = 3.1250
+Train Set: Epoch 61, batch 117, time = 19933s, loss = 0.2440, unreg loss = 0.0310, error = 0.0000
+Train Set: Epoch 61, batch 137, time = 19941s, loss = 0.2591, unreg loss = 0.0461, error = 1.5625
+Train Set: Epoch 61, batch 157, time = 19948s, loss = 0.2687, unreg loss = 0.0557, error = 1.5625
+Train Set: Epoch 61, batch 177, time = 19956s, loss = 0.3007, unreg loss = 0.0878, error = 3.1250
+Train Set: Epoch 61, batch 197, time = 19964s, loss = 0.2530, unreg loss = 0.0400, error = 0.0000
+Train Set: Epoch 61, batch 217, time = 19971s, loss = 0.3122, unreg loss = 0.0993, error = 4.6875
+Train Set: Epoch 61, batch 237, time = 19979s, loss = 0.2824, unreg loss = 0.0695, error = 1.5625
+Train Set: Epoch 61, batch 257, time = 19987s, loss = 0.3508, unreg loss = 0.1380, error = 6.2500
+Train Set: Epoch 61, batch 277, time = 19994s, loss = 0.3172, unreg loss = 0.1044, error = 6.2500
+Train Set: Epoch 61, batch 297, time = 20002s, loss = 0.2829, unreg loss = 0.0701, error = 1.5625
+Train Set: Epoch 61, batch 317, time = 20009s, loss = 0.2344, unreg loss = 0.0217, error = 0.0000
+Train Set: Epoch 61, batch 337, time = 20017s, loss = 0.2936, unreg loss = 0.0809, error = 0.0000
+Train Set: Epoch 61, batch 357, time = 20025s, loss = 0.2892, unreg loss = 0.0764, error = 1.5625
+Train Set: Epoch 61, batch 377, time = 20032s, loss = 0.3102, unreg loss = 0.0973, error = 3.1250
+Train Set: Epoch 61, batch 397, time = 20040s, loss = 0.4298, unreg loss = 0.2170, error = 9.3750
+Train Set: Epoch 61, batch 417, time = 20048s, loss = 0.3145, unreg loss = 0.1017, error = 3.1250
+Train Set: Epoch 61, batch 437, time = 20055s, loss = 0.2953, unreg loss = 0.0825, error = 3.1250
+Train Set: Epoch 61, batch 457, time = 20063s, loss = 0.2869, unreg loss = 0.0741, error = 4.6875
+Train Set: Epoch 61, batch 477, time = 20071s, loss = 0.3529, unreg loss = 0.1402, error = 4.6875
+Train Set: Epoch 61, batch 497, time = 20078s, loss = 0.2963, unreg loss = 0.0836, error = 1.5625
+Train Set: Epoch 61, batch 517, time = 20086s, loss = 0.2779, unreg loss = 0.0652, error = 3.1250
+Train Set: Epoch 61, batch 537, time = 20094s, loss = 0.2361, unreg loss = 0.0234, error = 0.0000
+Train Set: Epoch 61, batch 557, time = 20101s, loss = 0.4113, unreg loss = 0.1986, error = 6.2500
+Train Set: Epoch 61, batch 577, time = 20109s, loss = 0.2759, unreg loss = 0.0632, error = 3.1250
+Train Set: Epoch 61, batch 597, time = 20116s, loss = 0.2864, unreg loss = 0.0737, error = 3.1250
+Train Set: Epoch 61, batch 617, time = 20124s, loss = 0.2992, unreg loss = 0.0865, error = 3.1250
+Train Set: Epoch 61, batch 637, time = 20132s, loss = 0.2721, unreg loss = 0.0594, error = 1.5625
+Train Set: Epoch 61, batch 657, time = 20139s, loss = 0.2921, unreg loss = 0.0795, error = 1.5625
+Train Set: Epoch 61, batch 677, time = 20147s, loss = 0.3323, unreg loss = 0.1198, error = 4.6875
+Train Set: Epoch 61, batch 697, time = 20155s, loss = 0.2926, unreg loss = 0.0801, error = 4.6875
+Eval on Train Set: Epoch 61, batch 702, time = 20159s, loss = 0.3619, unreg loss = 0.1494, error = 3.3000
+Eval on Valid Set: Epoch 61, batch 702, time = 20162s, loss = 0.3909, error = 11.7000
+Eval on Test Set: Epoch 61, batch 702, time = 20165s, loss = 0.3798, error = 12.2000
+Train Set: Epoch 62, batch 14, time = 20241s, loss = 0.2879, unreg loss = 0.0754, error = 4.6875
+Train Set: Epoch 62, batch 34, time = 20249s, loss = 0.3670, unreg loss = 0.1545, error = 7.8125
+Train Set: Epoch 62, batch 54, time = 20257s, loss = 0.2926, unreg loss = 0.0802, error = 3.1250
+Train Set: Epoch 62, batch 74, time = 20264s, loss = 0.3719, unreg loss = 0.1595, error = 3.1250
+
+
+
+
+
+...
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+Train Set: Epoch 248, batch 696, time = 100348s, loss = 0.2719, unreg loss = 0.0747, error = 3.1250
+Eval on Train Set: Epoch 248, batch 702, time = 100353s, loss = 0.3391, unreg loss = 0.1419, error = 1.3000
+Eval on Valid Set: Epoch 248, batch 702, time = 100355s, loss = 0.4755, error = 11.8000
+Eval on Test Set: Epoch 248, batch 702, time = 100358s, loss = 0.4486, error = 11.6000
+Train Set: Epoch 249, batch 13, time = 100599s, loss = 0.3429, unreg loss = 0.1457, error = 4.6875
+Train Set: Epoch 249, batch 33, time = 100606s, loss = 0.3265, unreg loss = 0.1294, error = 4.6875
+Train Set: Epoch 249, batch 53, time = 100614s, loss = 0.2536, unreg loss = 0.0565, error = 3.1250
+Train Set: Epoch 249, batch 73, time = 100621s, loss = 0.2417, unreg loss = 0.0446, error = 1.5625
+Train Set: Epoch 249, batch 93, time = 100629s, loss = 0.2908, unreg loss = 0.0938, error = 1.5625
+Train Set: Epoch 249, batch 113, time = 100637s, loss = 0.3249, unreg loss = 0.1279, error = 4.6875
+Train Set: Epoch 249, batch 133, time = 100644s, loss = 0.2392, unreg loss = 0.0422, error = 1.5625
+Train Set: Epoch 249, batch 153, time = 100652s, loss = 0.3951, unreg loss = 0.1982, error = 4.6875
+Train Set: Epoch 249, batch 173, time = 100660s, loss = 0.2299, unreg loss = 0.0330, error = 1.5625
+Train Set: Epoch 249, batch 193, time = 100667s, loss = 0.3136, unreg loss = 0.1168, error = 4.6875
+Train Set: Epoch 249, batch 213, time = 100675s, loss = 0.2491, unreg loss = 0.0522, error = 1.5625
+Train Set: Epoch 249, batch 233, time = 100683s, loss = 0.2488, unreg loss = 0.0519, error = 1.5625
+Train Set: Epoch 249, batch 253, time = 100690s, loss = 0.3003, unreg loss = 0.1034, error = 3.1250
+Train Set: Epoch 249, batch 273, time = 100698s, loss = 0.2676, unreg loss = 0.0707, error = 1.5625
+Train Set: Epoch 249, batch 293, time = 100706s, loss = 0.2682, unreg loss = 0.0714, error = 1.5625
+Train Set: Epoch 249, batch 313, time = 100713s, loss = 0.2621, unreg loss = 0.0653, error = 1.5625
+Train Set: Epoch 249, batch 333, time = 100721s, loss = 0.3293, unreg loss = 0.1325, error = 4.6875
+Train Set: Epoch 249, batch 353, time = 100729s, loss = 0.2444, unreg loss = 0.0475, error = 3.1250
+Train Set: Epoch 249, batch 373, time = 100736s, loss = 0.2503, unreg loss = 0.0533, error = 3.1250
+Train Set: Epoch 249, batch 393, time = 100744s, loss = 0.2640, unreg loss = 0.0671, error = 1.5625
+Train Set: Epoch 249, batch 413, time = 100751s, loss = 0.2603, unreg loss = 0.0635, error = 3.1250
+Train Set: Epoch 249, batch 433, time = 100759s, loss = 0.2404, unreg loss = 0.0436, error = 0.0000
+Train Set: Epoch 249, batch 453, time = 100767s, loss = 0.2757, unreg loss = 0.0788, error = 3.1250
+Train Set: Epoch 249, batch 473, time = 100774s, loss = 0.2112, unreg loss = 0.0144, error = 0.0000
+Train Set: Epoch 249, batch 493, time = 100782s, loss = 0.2660, unreg loss = 0.0691, error = 3.1250
+Train Set: Epoch 249, batch 513, time = 100790s, loss = 0.2059, unreg loss = 0.0090, error = 0.0000
+Train Set: Epoch 249, batch 533, time = 100797s, loss = 0.2591, unreg loss = 0.0622, error = 1.5625
+Train Set: Epoch 249, batch 553, time = 100805s, loss = 0.2164, unreg loss = 0.0195, error = 0.0000
+Train Set: Epoch 249, batch 573, time = 100813s, loss = 0.2628, unreg loss = 0.0659, error = 1.5625
+Train Set: Epoch 249, batch 593, time = 100820s, loss = 0.2512, unreg loss = 0.0543, error = 1.5625
+Train Set: Epoch 249, batch 613, time = 100828s, loss = 0.2499, unreg loss = 0.0530, error = 1.5625
+Train Set: Epoch 249, batch 633, time = 100836s, loss = 0.3155, unreg loss = 0.1187, error = 6.2500
+Train Set: Epoch 249, batch 653, time = 100843s, loss = 0.2274, unreg loss = 0.0306, error = 1.5625
+Train Set: Epoch 249, batch 673, time = 100851s, loss = 0.2638, unreg loss = 0.0670, error = 1.5625
+Train Set: Epoch 249, batch 693, time = 100859s, loss = 0.2660, unreg loss = 0.0693, error = 1.5625
+Eval on Train Set: Epoch 249, batch 702, time = 100865s, loss = 0.3152, unreg loss = 0.1185, error = 2.8000
+Eval on Valid Set: Epoch 249, batch 702, time = 100867s, loss = 0.4544, error = 11.0000
+Eval on Test Set: Epoch 249, batch 702, time = 100870s, loss = 0.4399, error = 10.6000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+....
+
+
+
+....
+
+
+
+
+
+
+
+

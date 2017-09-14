@@ -1,0 +1,513 @@
+mstjules@gpu-pt1-01:~/generic_1/drmad-master_May22/gpu_ver$ THEANO_FLAGS='mode=FAST_RUN,optimizer=fast_compile,device=cuda1,floatX=float32,force_device=True' python simple_mlp2_online.py
+python: can't open file 'simple_mlp2_online.py': [Errno 2] No such file or directory
+mstjules@gpu-pt1-01:~/generic_1/drmad-master_May22/gpu_ver$ THEANO_FLAGS='mode=FAST_RUN,optimizer=fast_compile,device=cuda1,floatX=float32,force_device=True' python simple_mlp2_gpu_online.py
+Using cuDNN version 5110 on context None
+Mapped name None to device cuda1: Tesla K80 (0000:07:00.0)
+all argument:  Namespace(MLPlayer=[300, 300, 300, 10], addActivationNoise=False, addInputNoise=False, batchSizeEle=64, batchSizeHyper=64, bn=True, classes=10, dataset='cifar10', depth=40, dropout=0.2, eleAlg='SGDm', evaluateTestInterval=1, first_output=16, growth_rate=12, initScale=False, invSigmoidActivationNoiseMagnitude=-5, invSigmoidInputNoiseMagnitude=-4, lrEle=0.1, lrHyper=0.02, lrLlr=0.1, maxEpochInit=300, maxEpochMult=1.4, maxMaxEpoch=300, metaEpoch=80, meta_bw=True, model='convnet', momEle=0.95, momHyper=0.7, momLlr=0.0, nBackwardMult=1.0, nReversedIters=4, num_blocks=3, onlineItersPerUpdate=131, preContrast='None', preProcess='None', predata=False, processedDataName='cifar10_processed.npz', ratioHyper=0.2, ratioValid=0.2, regInit={'L1': -3.0, 'L2': -4.0}, regL1=False, regL2=True, seed=2135, validHyper=0.0, verbose=True)
+[pre_conv.W, block1_l01_scale.scales, block1_l01_shift.b, block1_l01_conv.W, block1_l02_scale.scales, block1_l02_shift.b, block1_l02_conv.W, block1_l03_scale.scales, block1_l03_shift.b, block1_l03_conv.W, block1_l04_scale.scales, block1_l04_shift.b, block1_l04_conv.W, block1_l05_scale.scales, block1_l05_shift.b, block1_l05_conv.W, block1_l06_scale.scales, block1_l06_shift.b, block1_l06_conv.W, block1_l07_scale.scales, block1_l07_shift.b, block1_l07_conv.W, block1_l08_scale.scales, block1_l08_shift.b, block1_l08_conv.W, block1_l09_scale.scales, block1_l09_shift.b, block1_l09_conv.W, block1_l10_scale.scales, block1_l10_shift.b, block1_l10_conv.W, block1_l11_scale.scales, block1_l11_shift.b, block1_l11_conv.W, block1_l12_scale.scales, block1_l12_shift.b, block1_l12_conv.W, block1_trs_scale.scales, block1_trs_shift.b, block1_trs_conv.W, block2_l01_scale.scales, block2_l01_shift.b, block2_l01_conv.W, block2_l02_scale.scales, block2_l02_shift.b, block2_l02_conv.W, block2_l03_scale.scales, block2_l03_shift.b, block2_l03_conv.W, block2_l04_scale.scales, block2_l04_shift.b, block2_l04_conv.W, block2_l05_scale.scales, block2_l05_shift.b, block2_l05_conv.W, block2_l06_scale.scales, block2_l06_shift.b, block2_l06_conv.W, block2_l07_scale.scales, block2_l07_shift.b, block2_l07_conv.W, block2_l08_scale.scales, block2_l08_shift.b, block2_l08_conv.W, block2_l09_scale.scales, block2_l09_shift.b, block2_l09_conv.W, block2_l10_scale.scales, block2_l10_shift.b, block2_l10_conv.W, block2_l11_scale.scales, block2_l11_shift.b, block2_l11_conv.W, block2_l12_scale.scales, block2_l12_shift.b, block2_l12_conv.W, block2_trs_scale.scales, block2_trs_shift.b, block2_trs_conv.W, block3_l01_scale.scales, block3_l01_shift.b, block3_l01_conv.W, block3_l02_scale.scales, block3_l02_shift.b, block3_l02_conv.W, block3_l03_scale.scales, block3_l03_shift.b, block3_l03_conv.W, block3_l04_scale.scales, block3_l04_shift.b, block3_l04_conv.W, block3_l05_scale.scales, block3_l05_shift.b, block3_l05_conv.W, block3_l06_scale.scales, block3_l06_shift.b, block3_l06_conv.W, block3_l07_scale.scales, block3_l07_shift.b, block3_l07_conv.W, block3_l08_scale.scales, block3_l08_shift.b, block3_l08_conv.W, block3_l09_scale.scales, block3_l09_shift.b, block3_l09_conv.W, block3_l10_scale.scales, block3_l10_shift.b, block3_l10_conv.W, block3_l11_scale.scales, block3_l11_shift.b, block3_l11_conv.W, block3_l12_scale.scales, block3_l12_shift.b, block3_l12_conv.W, post_scale.scales, post_shift.b, output.W, output.b]
+[pre_conv.W, block1_l01_scale.scales, block1_l01_conv.W, block1_l02_scale.scales, block1_l02_conv.W, block1_l03_scale.scales, block1_l03_conv.W, block1_l04_scale.scales, block1_l04_conv.W, block1_l05_scale.scales, block1_l05_conv.W, block1_l06_scale.scales, block1_l06_conv.W, block1_l07_scale.scales, block1_l07_conv.W, block1_l08_scale.scales, block1_l08_conv.W, block1_l09_scale.scales, block1_l09_conv.W, block1_l10_scale.scales, block1_l10_conv.W, block1_l11_scale.scales, block1_l11_conv.W, block1_l12_scale.scales, block1_l12_conv.W, block1_trs_scale.scales, block1_trs_conv.W, block2_l01_scale.scales, block2_l01_conv.W, block2_l02_scale.scales, block2_l02_conv.W, block2_l03_scale.scales, block2_l03_conv.W, block2_l04_scale.scales, block2_l04_conv.W, block2_l05_scale.scales, block2_l05_conv.W, block2_l06_scale.scales, block2_l06_conv.W, block2_l07_scale.scales, block2_l07_conv.W, block2_l08_scale.scales, block2_l08_conv.W, block2_l09_scale.scales, block2_l09_conv.W, block2_l10_scale.scales, block2_l10_conv.W, block2_l11_scale.scales, block2_l11_conv.W, block2_l12_scale.scales, block2_l12_conv.W, block2_trs_scale.scales, block2_trs_conv.W, block3_l01_scale.scales, block3_l01_conv.W, block3_l02_scale.scales, block3_l02_conv.W, block3_l03_scale.scales, block3_l03_conv.W, block3_l04_scale.scales, block3_l04_conv.W, block3_l05_scale.scales, block3_l05_conv.W, block3_l06_scale.scales, block3_l06_conv.W, block3_l07_scale.scales, block3_l07_conv.W, block3_l08_scale.scales, block3_l08_conv.W, block3_l09_scale.scales, block3_l09_conv.W, block3_l10_scale.scales, block3_l10_conv.W, block3_l11_scale.scales, block3_l11_conv.W, block3_l12_scale.scales, block3_l12_conv.W, post_scale.scales, output.W]
+[pre_conv.L2, block1_l01_scale.L2, block1_l01_conv.L2, block1_l02_scale.L2, block1_l02_conv.L2, block1_l03_scale.L2, block1_l03_conv.L2, block1_l04_scale.L2, block1_l04_conv.L2, block1_l05_scale.L2, block1_l05_conv.L2, block1_l06_scale.L2, block1_l06_conv.L2, block1_l07_scale.L2, block1_l07_conv.L2, block1_l08_scale.L2, block1_l08_conv.L2, block1_l09_scale.L2, block1_l09_conv.L2, block1_l10_scale.L2, block1_l10_conv.L2, block1_l11_scale.L2, block1_l11_conv.L2, block1_l12_scale.L2, block1_l12_conv.L2, block1_trs_scale.L2, block1_trs_conv.L2, block2_l01_scale.L2, block2_l01_conv.L2, block2_l02_scale.L2, block2_l02_conv.L2, block2_l03_scale.L2, block2_l03_conv.L2, block2_l04_scale.L2, block2_l04_conv.L2, block2_l05_scale.L2, block2_l05_conv.L2, block2_l06_scale.L2, block2_l06_conv.L2, block2_l07_scale.L2, block2_l07_conv.L2, block2_l08_scale.L2, block2_l08_conv.L2, block2_l09_scale.L2, block2_l09_conv.L2, block2_l10_scale.L2, block2_l10_conv.L2, block2_l11_scale.L2, block2_l11_conv.L2, block2_l12_scale.L2, block2_l12_conv.L2, block2_trs_scale.L2, block2_trs_conv.L2, block3_l01_scale.L2, block3_l01_conv.L2, block3_l02_scale.L2, block3_l02_conv.L2, block3_l03_scale.L2, block3_l03_conv.L2, block3_l04_scale.L2, block3_l04_conv.L2, block3_l05_scale.L2, block3_l05_conv.L2, block3_l06_scale.L2, block3_l06_conv.L2, block3_l07_scale.L2, block3_l07_conv.L2, block3_l08_scale.L2, block3_l08_conv.L2, block3_l09_scale.L2, block3_l09_conv.L2, block3_l10_scale.L2, block3_l10_conv.L2, block3_l11_scale.L2, block3_l11_conv.L2, block3_l12_scale.L2, block3_l12_conv.L2, post_scale.L2, output.L2]
+[]
+loss and losswithpenalty <class 'theano.tensor.var.TensorVariable'> <class 'theano.tensor.var.TensorVariable'>
+output_valid_list True
+func_hyper defined, taking 68817.32252669334s
+Online_2017-Aug-08_20h34m32s
+Meta-meta iter 0
+Eval on Train Set: unreg_loss = 2.6241, loss = 3.7134, error = 92.1429
+Eval on Valid Set: loss = 2.5916, error = 91.5714
+Eval on Test Set: loss = 2.5204, error = 90.8571
+elementary iterations before restarting 168600
+Train Set: Epoch 0, batch 130, loss = 2.6798, unreg loss = 1.5947, error = 59.3750
+Valid on Hyper Set: valid_err = 67.03, valid_loss = 1.7543
+Eval on Train Set: Epoch 0, loss = 2.8957, unreg loss = 1.8106, error = 59.4286
+Eval on Valid Set: Epoch 0, time = 114s, loss = 1.9301, error = 63.5714
+Eval on Test Set: Epoch 0, time = 116s, loss = 1.8529, error = 60.2857
+Train Set: Epoch 0, batch 261, loss = 2.6954, unreg loss = 1.6142, error = 70.3125
+Valid on Hyper Set: valid_err = 60.00, valid_loss = 1.6762
+Eval on Train Set: Epoch 0, loss = 2.7455, unreg loss = 1.6641, error = 59.2857
+Eval on Valid Set: Epoch 0, time = 241s, loss = 1.7134, error = 61.4286
+Eval on Test Set: Epoch 0, time = 243s, loss = 1.6365, error = 57.5714
+Train Set: Epoch 0, batch 392, loss = 2.3513, unreg loss = 1.2742, error = 53.1250
+Valid on Hyper Set: valid_err = 53.91, valid_loss = 1.5928
+Eval on Train Set: Epoch 0, loss = 2.6579, unreg loss = 1.5807, error = 52.1429
+Eval on Valid Set: Epoch 0, time = 367s, loss = 1.5649, error = 53.8571
+Eval on Test Set: Epoch 0, time = 370s, loss = 1.5523, error = 51.5714
+Train Set: Epoch 0, batch 523, loss = 2.3304, unreg loss = 1.2568, error = 40.6250
+Valid on Hyper Set: valid_err = 46.88, valid_loss = 1.3781
+Eval on Train Set: Epoch 0, loss = 2.5394, unreg loss = 1.4657, error = 51.0000
+Eval on Valid Set: Epoch 0, time = 494s, loss = 1.4497, error = 52.2857
+Eval on Test Set: Epoch 0, time = 496s, loss = 1.3735, error = 47.5714
+Train Set: Epoch 1, batch 92, loss = 2.4200, unreg loss = 1.3507, error = 45.3125
+Valid on Hyper Set: valid_err = 46.25, valid_loss = 1.3474
+Eval on Train Set: Epoch 1, loss = 2.3764, unreg loss = 1.3070, error = 45.0000
+Eval on Valid Set: Epoch 1, time = 621s, loss = 1.2965, error = 45.7143
+Eval on Test Set: Epoch 1, time = 623s, loss = 1.3332, error = 46.8571
+Train Set: Epoch 1, batch 223, loss = 2.5290, unreg loss = 1.4638, error = 64.0625
+Valid on Hyper Set: valid_err = 46.72, valid_loss = 1.3201
+Eval on Train Set: Epoch 1, loss = 2.3766, unreg loss = 1.3112, error = 44.4286
+Eval on Valid Set: Epoch 1, time = 748s, loss = 1.2890, error = 44.8571
+Eval on Test Set: Epoch 1, time = 750s, loss = 1.3205, error = 45.5714
+Train Set: Epoch 1, batch 354, loss = 2.2444, unreg loss = 1.1847, error = 48.4375
+Valid on Hyper Set: valid_err = 42.66, valid_loss = 1.2688
+Eval on Train Set: Epoch 1, loss = 2.2763, unreg loss = 1.2165, error = 39.0000
+Eval on Valid Set: Epoch 1, time = 874s, loss = 1.1696, error = 41.0000
+Eval on Test Set: Epoch 1, time = 876s, loss = 1.2408, error = 41.2857
+Train Set: Epoch 1, batch 485, loss = 2.2317, unreg loss = 1.1769, error = 45.3125
+Valid on Hyper Set: valid_err = 36.25, valid_loss = 1.0537
+Eval on Train Set: Epoch 1, loss = 2.2588, unreg loss = 1.2039, error = 38.4286
+Eval on Valid Set: Epoch 1, time = 1000s, loss = 1.1758, error = 38.2857
+Eval on Test Set: Epoch 1, time = 1002s, loss = 1.2074, error = 40.0000
+Train Set: Epoch 2, batch 54, loss = 1.8913, unreg loss = 0.8397, error = 31.2500
+Valid on Hyper Set: valid_err = 39.53, valid_loss = 1.0562
+Eval on Train Set: Epoch 2, loss = 2.0916, unreg loss = 1.0398, error = 34.4286
+Eval on Valid Set: Epoch 2, time = 1126s, loss = 1.0827, error = 37.2857
+Eval on Test Set: Epoch 2, time = 1128s, loss = 1.0832, error = 36.2857
+Train Set: Epoch 2, batch 185, loss = 2.0821, unreg loss = 1.0340, error = 40.6250
+Valid on Hyper Set: valid_err = 37.66, valid_loss = 1.0635
+Eval on Train Set: Epoch 2, loss = 2.0847, unreg loss = 1.0364, error = 36.8571
+Eval on Valid Set: Epoch 2, time = 1252s, loss = 1.0207, error = 35.2857
+Eval on Test Set: Epoch 2, time = 1255s, loss = 1.0808, error = 38.0000
+Train Set: Epoch 2, batch 316, loss = 2.0455, unreg loss = 1.0006, error = 37.5000
+Valid on Hyper Set: valid_err = 30.94, valid_loss = 0.9780
+Eval on Train Set: Epoch 2, loss = 2.0841, unreg loss = 1.0391, error = 36.2857
+Eval on Valid Set: Epoch 2, time = 1379s, loss = 1.0492, error = 35.4286
+Eval on Test Set: Epoch 2, time = 1381s, loss = 1.0588, error = 36.2857
+Train Set: Epoch 2, batch 447, loss = 2.0111, unreg loss = 0.9695, error = 35.9375
+Valid on Hyper Set: valid_err = 32.97, valid_loss = 1.0590
+Eval on Train Set: Epoch 2, loss = 2.0577, unreg loss = 1.0161, error = 34.4286
+Eval on Valid Set: Epoch 2, time = 1505s, loss = 0.9617, error = 32.7143
+Eval on Test Set: Epoch 2, time = 1507s, loss = 0.9728, error = 33.0000
+Train Set: Epoch 3, batch 16, loss = 1.8943, unreg loss = 0.8560, error = 29.6875
+Valid on Hyper Set: valid_err = 32.97, valid_loss = 1.0840
+Eval on Train Set: Epoch 3, loss = 2.1080, unreg loss = 1.0696, error = 33.8571
+Eval on Valid Set: Epoch 3, time = 1632s, loss = 1.1139, error = 37.1429
+Eval on Test Set: Epoch 3, time = 1634s, loss = 0.9812, error = 31.2857
+Train Set: Epoch 3, batch 147, loss = 1.9918, unreg loss = 0.9580, error = 32.8125
+Valid on Hyper Set: valid_err = 32.03, valid_loss = 1.1138
+Eval on Train Set: Epoch 3, loss = 1.9778, unreg loss = 0.9439, error = 34.4286
+Eval on Valid Set: Epoch 3, time = 1758s, loss = 1.0012, error = 36.5714
+Eval on Test Set: Epoch 3, time = 1760s, loss = 0.8861, error = 32.7143
+Train Set: Epoch 3, batch 278, loss = 2.1010, unreg loss = 1.0723, error = 39.0625
+Valid on Hyper Set: valid_err = 32.81, valid_loss = 0.9629
+Eval on Train Set: Epoch 3, loss = 1.9894, unreg loss = 0.9607, error = 32.1429
+Eval on Valid Set: Epoch 3, time = 1885s, loss = 1.0407, error = 33.1429
+Eval on Test Set: Epoch 3, time = 1887s, loss = 0.9329, error = 30.5714
+Train Set: Epoch 3, batch 409, loss = 1.9784, unreg loss = 0.9541, error = 32.8125
+Valid on Hyper Set: valid_err = 32.97, valid_loss = 1.0736
+Eval on Train Set: Epoch 3, loss = 2.0425, unreg loss = 1.0181, error = 32.8571
+Eval on Valid Set: Epoch 3, time = 2011s, loss = 1.0885, error = 34.0000
+Eval on Test Set: Epoch 3, time = 2013s, loss = 0.9797, error = 29.7143
+Train Set: Epoch 3, batch 540, loss = 1.9983, unreg loss = 0.9792, error = 39.0625
+Valid on Hyper Set: valid_err = 32.03, valid_loss = 0.9715
+Eval on Train Set: Epoch 3, loss = 1.9893, unreg loss = 0.9701, error = 33.5714
+Eval on Valid Set: Epoch 3, time = 2137s, loss = 1.0582, error = 34.8571
+Eval on Test Set: Epoch 3, time = 2140s, loss = 0.9252, error = 30.1429
+Train Set: Epoch 4, batch 109, loss = 1.9317, unreg loss = 0.9177, error = 28.1250
+Valid on Hyper Set: valid_err = 32.03, valid_loss = 1.0175
+Eval on Train Set: Epoch 4, loss = 1.7541, unreg loss = 0.7400, error = 27.7143
+Eval on Valid Set: Epoch 4, time = 2264s, loss = 0.9109, error = 32.0000
+Eval on Test Set: Epoch 4, time = 2266s, loss = 0.8559, error = 32.2857
+Train Set: Epoch 4, batch 240, loss = 1.9891, unreg loss = 0.9793, error = 32.8125
+Valid on Hyper Set: valid_err = 33.75, valid_loss = 0.9429
+Eval on Train Set: Epoch 4, loss = 1.7814, unreg loss = 0.7715, error = 29.0000
+Eval on Valid Set: Epoch 4, time = 2390s, loss = 0.8593, error = 28.5714
+Eval on Test Set: Epoch 4, time = 2392s, loss = 0.8006, error = 27.2857
+Train Set: Epoch 4, batch 371, loss = 1.6566, unreg loss = 0.6516, error = 23.4375
+Valid on Hyper Set: valid_err = 29.84, valid_loss = 0.7252
+Eval on Train Set: Epoch 4, loss = 1.7174, unreg loss = 0.7123, error = 26.4286
+Eval on Valid Set: Epoch 4, time = 2516s, loss = 0.8320, error = 29.0000
+Eval on Test Set: Epoch 4, time = 2518s, loss = 0.8249, error = 29.4286
+Train Set: Epoch 4, batch 502, loss = 1.8073, unreg loss = 0.8062, error = 31.2500
+Valid on Hyper Set: valid_err = 27.50, valid_loss = 0.8446
+Eval on Train Set: Epoch 4, loss = 1.7645, unreg loss = 0.7632, error = 24.8571
+Eval on Valid Set: Epoch 4, time = 2643s, loss = 0.8424, error = 28.5714
+Eval on Test Set: Epoch 4, time = 2645s, loss = 0.7844, error = 30.0000
+Train Set: Epoch 5, batch 71, loss = 1.9485, unreg loss = 0.9518, error = 34.3750
+Valid on Hyper Set: valid_err = 30.31, valid_loss = 0.9665
+Eval on Train Set: Epoch 5, loss = 1.7594, unreg loss = 0.7627, error = 26.1429
+Eval on Valid Set: Epoch 5, time = 2770s, loss = 0.8519, error = 29.7143
+Eval on Test Set: Epoch 5, time = 2772s, loss = 0.9368, error = 29.0000
+Train Set: Epoch 5, batch 202, loss = 1.9480, unreg loss = 0.9556, error = 28.1250
+Valid on Hyper Set: valid_err = 28.91, valid_loss = 0.8221
+Eval on Train Set: Epoch 5, loss = 1.8978, unreg loss = 0.9052, error = 26.7143
+Eval on Valid Set: Epoch 5, time = 2896s, loss = 0.9228, error = 27.8571
+Eval on Test Set: Epoch 5, time = 2899s, loss = 1.0176, error = 30.2857
+Train Set: Epoch 5, batch 333, loss = 1.9096, unreg loss = 0.9216, error = 32.8125
+Valid on Hyper Set: valid_err = 24.22, valid_loss = 0.7180
+Eval on Train Set: Epoch 5, loss = 1.9599, unreg loss = 0.9717, error = 27.0000
+Eval on Valid Set: Epoch 5, time = 3023s, loss = 0.9492, error = 28.0000
+Eval on Test Set: Epoch 5, time = 3025s, loss = 0.9957, error = 27.5714
+Train Set: Epoch 5, batch 464, loss = 1.8449, unreg loss = 0.8606, error = 32.8125
+Valid on Hyper Set: valid_err = 25.94, valid_loss = 0.8499
+Eval on Train Set: Epoch 5, loss = 1.7473, unreg loss = 0.7628, error = 26.0000
+Eval on Valid Set: Epoch 5, time = 3150s, loss = 0.8279, error = 28.2857
+Eval on Test Set: Epoch 5, time = 3152s, loss = 0.8498, error = 28.8571
+Train Set: Epoch 6, batch 33, loss = 1.6678, unreg loss = 0.6879, error = 31.2500
+Valid on Hyper Set: valid_err = 27.19, valid_loss = 0.8455
+Eval on Train Set: Epoch 6, loss = 1.8476, unreg loss = 0.8675, error = 26.2857
+Eval on Valid Set: Epoch 6, time = 3276s, loss = 0.8281, error = 28.0000
+Eval on Test Set: Epoch 6, time = 3278s, loss = 0.9310, error = 28.7143
+Train Set: Epoch 6, batch 164, loss = 1.7915, unreg loss = 0.8166, error = 35.9375
+Valid on Hyper Set: valid_err = 26.72, valid_loss = 0.8465
+Eval on Train Set: Epoch 6, loss = 1.7008, unreg loss = 0.7257, error = 25.0000
+Eval on Valid Set: Epoch 6, time = 3402s, loss = 0.7874, error = 26.4286
+Eval on Test Set: Epoch 6, time = 3404s, loss = 0.8486, error = 28.1429
+Train Set: Epoch 6, batch 295, loss = 1.7052, unreg loss = 0.7355, error = 23.4375
+Valid on Hyper Set: valid_err = 24.84, valid_loss = 0.7323
+Eval on Train Set: Epoch 6, loss = 1.7130, unreg loss = 0.7431, error = 24.0000
+Eval on Valid Set: Epoch 6, time = 3529s, loss = 0.7893, error = 27.8571
+Eval on Test Set: Epoch 6, time = 3531s, loss = 0.8218, error = 26.1429
+Train Set: Epoch 6, batch 426, loss = 1.6488, unreg loss = 0.6843, error = 28.1250
+Valid on Hyper Set: valid_err = 24.22, valid_loss = 0.6555
+Eval on Train Set: Epoch 6, loss = 1.6587, unreg loss = 0.6940, error = 26.2857
+Eval on Valid Set: Epoch 6, time = 3655s, loss = 0.7131, error = 26.1429
+Eval on Test Set: Epoch 6, time = 3657s, loss = 0.7602, error = 27.1429
+Train Set: Epoch 6, batch 557, loss = 1.6647, unreg loss = 0.7061, error = 18.7500
+Valid on Hyper Set: valid_err = 27.81, valid_loss = 0.7407
+Eval on Train Set: Epoch 6, loss = 1.7509, unreg loss = 0.7922, error = 27.5714
+Eval on Valid Set: Epoch 6, time = 3781s, loss = 0.8005, error = 25.1429
+Eval on Test Set: Epoch 6, time = 3783s, loss = 0.8324, error = 25.8571
+Train Set: Epoch 7, batch 126, loss = 1.7463, unreg loss = 0.7943, error = 25.0000
+Valid on Hyper Set: valid_err = 29.84, valid_loss = 0.8140
+Eval on Train Set: Epoch 7, loss = 1.5781, unreg loss = 0.6259, error = 22.2857
+Eval on Valid Set: Epoch 7, time = 3908s, loss = 0.7725, error = 24.7143
+Eval on Test Set: Epoch 7, time = 3910s, loss = 0.7350, error = 22.5714
+Train Set: Epoch 7, batch 257, loss = 1.6145, unreg loss = 0.6681, error = 21.8750
+Valid on Hyper Set: valid_err = 23.91, valid_loss = 0.7929
+Eval on Train Set: Epoch 7, loss = 1.6070, unreg loss = 0.6605, error = 22.8571
+Eval on Valid Set: Epoch 7, time = 4035s, loss = 0.7729, error = 26.5714
+Eval on Test Set: Epoch 7, time = 4037s, loss = 0.7468, error = 24.1429
+Train Set: Epoch 7, batch 388, loss = 1.6829, unreg loss = 0.7423, error = 23.4375
+Valid on Hyper Set: valid_err = 25.16, valid_loss = 0.7514
+Eval on Train Set: Epoch 7, loss = 1.5539, unreg loss = 0.6132, error = 19.7143
+Eval on Valid Set: Epoch 7, time = 4161s, loss = 0.7009, error = 23.7143
+Eval on Test Set: Epoch 7, time = 4163s, loss = 0.7115, error = 22.4286
+Train Set: Epoch 7, batch 519, loss = 1.3270, unreg loss = 0.3918, error = 14.0625
+Valid on Hyper Set: valid_err = 22.81, valid_loss = 0.6902
+Eval on Train Set: Epoch 7, loss = 1.5086, unreg loss = 0.5733, error = 22.2857
+Eval on Valid Set: Epoch 7, time = 4287s, loss = 0.6489, error = 22.7143
+Eval on Test Set: Epoch 7, time = 4290s, loss = 0.6341, error = 20.4286
+Train Set: Epoch 8, batch 88, loss = 1.6214, unreg loss = 0.6916, error = 25.0000
+Valid on Hyper Set: valid_err = 23.44, valid_loss = 0.6586
+Eval on Train Set: Epoch 8, loss = 1.5929, unreg loss = 0.6630, error = 22.0000
+Eval on Valid Set: Epoch 8, time = 4414s, loss = 0.7536, error = 24.4286
+Eval on Test Set: Epoch 8, time = 4416s, loss = 0.7053, error = 24.0000
+Train Set: Epoch 8, batch 219, loss = 1.6157, unreg loss = 0.6903, error = 23.4375
+Valid on Hyper Set: valid_err = 20.94, valid_loss = 0.6484
+Eval on Train Set: Epoch 8, loss = 1.5423, unreg loss = 0.6168, error = 24.1429
+Eval on Valid Set: Epoch 8, time = 4540s, loss = 0.7169, error = 25.0000
+Eval on Test Set: Epoch 8, time = 4542s, loss = 0.6658, error = 21.8571
+Train Set: Epoch 8, batch 350, loss = 1.3947, unreg loss = 0.4747, error = 18.7500
+Valid on Hyper Set: valid_err = 23.44, valid_loss = 0.7197
+Eval on Train Set: Epoch 8, loss = 1.5425, unreg loss = 0.6224, error = 20.8571
+Eval on Valid Set: Epoch 8, time = 4667s, loss = 0.7263, error = 24.0000
+Eval on Test Set: Epoch 8, time = 4669s, loss = 0.6827, error = 21.1429
+Train Set: Epoch 8, batch 481, loss = 1.3882, unreg loss = 0.4729, error = 18.7500
+Valid on Hyper Set: valid_err = 21.25, valid_loss = 0.6244
+Eval on Train Set: Epoch 8, loss = 1.5588, unreg loss = 0.6433, error = 21.7143
+Eval on Valid Set: Epoch 8, time = 4794s, loss = 0.7069, error = 20.5714
+Eval on Test Set: Epoch 8, time = 4796s, loss = 0.6535, error = 22.0000
+Train Set: Epoch 9, batch 50, loss = 1.5452, unreg loss = 0.6348, error = 26.5625
+Valid on Hyper Set: valid_err = 23.91, valid_loss = 0.6896
+Eval on Train Set: Epoch 9, loss = 1.5295, unreg loss = 0.6189, error = 22.4286
+Eval on Valid Set: Epoch 9, time = 4920s, loss = 0.6699, error = 21.8571
+Eval on Test Set: Epoch 9, time = 4922s, loss = 0.6467, error = 23.5714
+Train Set: Epoch 9, batch 181, loss = 1.5617, unreg loss = 0.6573, error = 23.4375
+Valid on Hyper Set: valid_err = 24.38, valid_loss = 0.7669
+Eval on Train Set: Epoch 9, loss = 1.4787, unreg loss = 0.5742, error = 19.5714
+Eval on Valid Set: Epoch 9, time = 5047s, loss = 0.6929, error = 23.5714
+Eval on Test Set: Epoch 9, time = 5049s, loss = 0.7525, error = 25.4286
+Train Set: Epoch 9, batch 312, loss = 1.4397, unreg loss = 0.5407, error = 18.7500
+Valid on Hyper Set: valid_err = 21.09, valid_loss = 0.6491
+Eval on Train Set: Epoch
+
+
+
+
+...
+
+
+
+...
+
+
+
+
+
+
+
+
+Eval on Train Set: Epoch 145, loss = 0.7262, unreg loss = 0.1617, error = 4.8571
+Eval on Valid Set: Epoch 145, time = 79561s, loss = 0.3824, error = 11.8571
+Eval on Test Set: Epoch 145, time = 79563s, loss = 0.4456, error = 14.2857
+Train Set: Epoch 145, batch 253, loss = 0.7523, unreg loss = 0.1885, error = 6.2500
+Valid on Hyper Set: valid_err = 12.03, valid_loss = 0.3246
+Eval on Train Set: Epoch 145, loss = 0.7175, unreg loss = 0.1536, error = 5.1429
+Eval on Valid Set: Epoch 145, time = 79689s, loss = 0.3592, error = 10.8571
+Eval on Test Set: Epoch 145, time = 79691s, loss = 0.4701, error = 15.0000
+Train Set: Epoch 145, batch 384, loss = 0.7437, unreg loss = 0.1803, error = 4.6875
+Valid on Hyper Set: valid_err = 13.59, valid_loss = 0.3528
+Eval on Train Set: Epoch 145, loss = 0.6989, unreg loss = 0.1353, error = 7.4286
+Eval on Valid Set: Epoch 145, time = 79818s, loss = 0.3361, error = 11.2857
+Eval on Test Set: Epoch 145, time = 79820s, loss = 0.4645, error = 17.2857
+Train Set: Epoch 145, batch 515, loss = 0.7373, unreg loss = 0.1742, error = 4.6875
+Valid on Hyper Set: valid_err = 12.19, valid_loss = 0.3663
+Eval on Train Set: Epoch 145, loss = 0.6554, unreg loss = 0.0922, error = 4.0000
+Eval on Valid Set: Epoch 145, time = 79946s, loss = 0.3800, error = 11.7143
+Eval on Test Set: Epoch 145, time = 79948s, loss = 0.4679, error = 15.0000
+Train Set: Epoch 146, batch 84, loss = 0.7267, unreg loss = 0.1623, error = 4.6875
+Valid on Hyper Set: valid_err = 13.59, valid_loss = 0.3257
+Eval on Train Set: Epoch 146, loss = 0.6707, unreg loss = 0.1063, error = 3.4286
+Eval on Valid Set: Epoch 146, time = 80074s, loss = 0.2869, error = 10.2857
+Eval on Test Set: Epoch 146, time = 80076s, loss = 0.4357, error = 14.0000
+Train Set: Epoch 146, batch 215, loss = 0.7194, unreg loss = 0.1555, error = 3.1250
+Valid on Hyper Set: valid_err = 10.62, valid_loss = 0.3055
+Eval on Train Set: Epoch 146, loss = 0.6978, unreg loss = 0.1338, error = 5.2857
+Eval on Valid Set: Epoch 146, time = 80202s, loss = 0.3070, error = 10.0000
+Eval on Test Set: Epoch 146, time = 80204s, loss = 0.4546, error = 15.5714
+Train Set: Epoch 146, batch 346, loss = 0.7695, unreg loss = 0.2054, error = 3.1250
+Valid on Hyper Set: valid_err = 14.84, valid_loss = 0.3893
+Eval on Train Set: Epoch 146, loss = 0.7368, unreg loss = 0.1728, error = 5.4286
+Eval on Valid Set: Epoch 146, time = 80331s, loss = 0.3068, error = 11.1429
+Eval on Test Set: Epoch 146, time = 80333s, loss = 0.4306, error = 14.1429
+Train Set: Epoch 146, batch 477, loss = 0.7776, unreg loss = 0.2138, error = 7.8125
+Valid on Hyper Set: valid_err = 10.16, valid_loss = 0.3023
+Eval on Train Set: Epoch 146, loss = 0.7078, unreg loss = 0.1441, error = 6.0000
+Eval on Valid Set: Epoch 146, time = 80459s, loss = 0.2614, error = 10.4286
+Eval on Test Set: Epoch 146, time = 80461s, loss = 0.4058, error = 15.4286
+Train Set: Epoch 147, batch 46, loss = 0.7013, unreg loss = 0.1370, error = 1.5625
+Valid on Hyper Set: valid_err = 13.12, valid_loss = 0.3380
+Eval on Train Set: Epoch 147, loss = 0.6591, unreg loss = 0.0948, error = 3.8571
+Eval on Valid Set: Epoch 147, time = 80588s, loss = 0.3052, error = 10.8571
+Eval on Test Set: Epoch 147, time = 80590s, loss = 0.4008, error = 12.8571
+Train Set: Epoch 147, batch 177, loss = 0.6695, unreg loss = 0.1040, error = 3.1250
+Valid on Hyper Set: valid_err = 13.12, valid_loss = 0.2781
+Eval on Train Set: Epoch 147, loss = 0.6824, unreg loss = 0.1168, error = 5.5714
+Eval on Valid Set: Epoch 147, time = 80716s, loss = 0.3276, error = 11.4286
+Eval on Test Set: Epoch 147, time = 80718s, loss = 0.3958, error = 14.7143
+Train Set: Epoch 147, batch 308, loss = 0.7583, unreg loss = 0.1937, error = 4.6875
+Valid on Hyper Set: valid_err = 9.53, valid_loss = 0.2642
+Eval on Train Set: Epoch 147, loss = 0.6831, unreg loss = 0.1185, error = 5.2857
+Eval on Valid Set: Epoch 147, time = 80844s, loss = 0.3285, error = 12.5714
+Eval on Test Set: Epoch 147, time = 80846s, loss = 0.3785, error = 13.8571
+Train Set: Epoch 147, batch 439, loss = 0.7137, unreg loss = 0.1488, error = 6.2500
+Valid on Hyper Set: valid_err = 10.94, valid_loss = 0.2620
+Eval on Train Set: Epoch 147, loss = 0.6928, unreg loss = 0.1279, error = 6.1429
+Eval on Valid Set: Epoch 147, time = 80973s, loss = 0.3446, error = 12.1429
+Eval on Test Set: Epoch 147, time = 80975s, loss = 0.3634, error = 15.2857
+Train Set: Epoch 148, batch 8, loss = 0.6924, unreg loss = 0.1284, error = 1.5625
+Valid on Hyper Set: valid_err = 13.28, valid_loss = 0.3554
+Eval on Train Set: Epoch 148, loss = 0.6443, unreg loss = 0.0802, error = 3.0000
+Eval on Valid Set: Epoch 148, time = 81102s, loss = 0.3393, error = 11.7143
+Eval on Test Set: Epoch 148, time = 81104s, loss = 0.4048, error = 13.2857
+Train Set: Epoch 148, batch 139, loss = 0.7329, unreg loss = 0.1672, error = 3.1250
+Valid on Hyper Set: valid_err = 14.06, valid_loss = 0.2970
+Eval on Train Set: Epoch 148, loss = 0.6539, unreg loss = 0.0882, error = 5.8571
+Eval on Valid Set: Epoch 148, time = 81268s, loss = 0.2826, error = 11.4286
+Eval on Test Set: Epoch 148, time = 81270s, loss = 0.3916, error = 13.4286
+Train Set: Epoch 148, batch 270, loss = 0.7425, unreg loss = 0.1756, error = 4.6875
+Valid on Hyper Set: valid_err = 12.19, valid_loss = 0.2704
+Eval on Train Set: Epoch 148, loss = 0.6541, unreg loss = 0.0873, error = 6.0000
+Eval on Valid Set: Epoch 148, time = 81395s, loss = 0.3252, error = 11.5714
+Eval on Test Set: Epoch 148, time = 81397s, loss = 0.4033, error = 14.1429
+Train Set: Epoch 148, batch 401, loss = 0.6405, unreg loss = 0.0759, error = 1.5625
+Valid on Hyper Set: valid_err = 12.66, valid_loss = 0.3631
+Eval on Train Set: Epoch 148, loss = 0.6864, unreg loss = 0.1217, error = 5.8571
+Eval on Valid Set: Epoch 148, time = 81522s, loss = 0.3166, error = 13.4286
+Eval on Test Set: Epoch 148, time = 81524s, loss = 0.4131, error = 12.2857
+Train Set: Epoch 148, batch 532, loss = 0.7046, unreg loss = 0.1393, error = 3.1250
+Valid on Hyper Set: valid_err = 15.16, valid_loss = 0.3314
+Eval on Train Set: Epoch 148, loss = 0.6213, unreg loss = 0.0560, error = 2.4286
+Eval on Valid Set: Epoch 148, time = 81649s, loss = 0.3299, error = 13.1429
+Eval on Test Set: Epoch 148, time = 81652s, loss = 0.3973, error = 14.0000
+Train Set: Epoch 149, batch 101, loss = 0.7117, unreg loss = 0.1447, error = 3.1250
+Valid on Hyper Set: valid_err = 12.66, valid_loss = 0.2577
+Eval on Train Set: Epoch 149, loss = 0.6315, unreg loss = 0.0644, error = 3.5714
+Eval on Valid Set: Epoch 149, time = 81776s, loss = 0.2985, error = 10.8571
+Eval on Test Set: Epoch 149, time = 81778s, loss = 0.3800, error = 12.4286
+Train Set: Epoch 149, batch 232, loss = 0.6547, unreg loss = 0.0882, error = 1.5625
+Valid on Hyper Set: valid_err = 12.66, valid_loss = 0.2856
+Eval on Train Set: Epoch 149, loss = 0.6770, unreg loss = 0.1104, error = 5.1429
+Eval on Valid Set: Epoch 149, time = 81904s, loss = 0.2742, error = 10.8571
+Eval on Test Set: Epoch 149, time = 81906s, loss = 0.4136, error = 14.1429
+Train Set: Epoch 149, batch 363, loss = 0.7360, unreg loss = 0.1702, error = 3.1250
+Valid on Hyper Set: valid_err = 12.50, valid_loss = 0.3407
+Eval on Train Set: Epoch 149, loss = 0.6982, unreg loss = 0.1324, error = 5.8571
+Eval on Valid Set: Epoch 149, time = 82031s, loss = 0.3255, error = 11.2857
+Eval on Test Set: Epoch 149, time = 82033s, loss = 0.4487, error = 14.2857
+Train Set: Epoch 149, batch 494, loss = 0.6981, unreg loss = 0.1317, error = 4.6875
+Valid on Hyper Set: valid_err = 12.50, valid_loss = 0.3079
+Eval on Train Set: Epoch 149, loss = 0.6630, unreg loss = 0.0965, error = 6.1429
+Eval on Valid Set: Epoch 149, time = 82158s, loss = 0.2926, error = 12.0000
+Eval on Test Set: Epoch 149, time = 82161s, loss = 0.4072, error = 12.8571
+Train Set: Epoch 150, batch 63, loss = 0.7647, unreg loss = 0.1968, error = 4.6875
+Valid on Hyper Set: valid_err = 13.59, valid_loss = 0.3463
+Eval on Train Set: Epoch 150, loss = 0.6636, unreg loss = 0.0956, error = 5.4286
+Eval on Valid Set: Epoch 150, time = 82286s, loss = 0.2496, error = 10.5714
+Eval on Test Set: Epoch 150, time = 82288s, loss = 0.3945, error = 15.0000
+Train Set: Epoch 150, batch 194, loss = 0.7374, unreg loss = 0.1691, error = 6.2500
+Valid on Hyper Set: valid_err = 10.16, valid_loss = 0.2806
+Eval on Train Set: Epoch 150, loss = 0.6608, unreg loss = 0.0924, error = 5.4286
+Eval on Valid Set: Epoch 150, time = 82415s, loss = 0.2406, error = 11.1429
+Eval on Test Set: Epoch 150, time = 82417s, loss = 0.4032, error = 14.0000
+Train Set: Epoch 150, batch 325, loss = 0.7860, unreg loss = 0.2206, error = 7.8125
+Valid on Hyper Set: valid_err = 12.19, valid_loss = 0.3332
+Eval on Train Set: Epoch 150, loss = 0.6727, unreg loss = 0.1072, error = 4.0000
+Eval on Valid Set: Epoch 150, time = 82543s, loss = 0.2556, error = 9.1429
+Eval on Test Set: Epoch 150, time = 82545s, loss = 0.4333, error = 13.0000
+Train Set: Epoch 150, batch 456, loss = 0.7325, unreg loss = 0.1692, error = 3.1250
+Valid on Hyper Set: valid_err = 13.28, valid_loss = 0.3283
+Eval on Train Set: Epoch 150, loss = 0.6801, unreg loss = 0.1169, error = 5.8571
+Eval on Valid Set: Epoch 150, time = 82670s, loss = 0.2322, error = 11.0000
+Eval on Test Set: Epoch 150, time = 82672s, loss = 0.3984, error = 13.1429
+Train Set: Epoch 151, batch 25, loss = 0.7342, unreg loss = 0.1706, error = 6.2500
+Valid on Hyper Set: valid_err = 10.00, valid_loss = 0.2418
+Eval on Train Set: Epoch 151, loss = 0.6377, unreg loss = 0.0741, error = 3.8571
+Eval on Valid Set: Epoch 151, time = 82798s, loss = 0.2848, error = 8.7143
+Eval on Test Set: Epoch 151, time = 82800s, loss = 0.3960, error = 13.4286
+Train Set: Epoch 151, batch 156, loss = 0.6956, unreg loss = 0.1313, error = 1.5625
+Valid on Hyper Set: valid_err = 12.19, valid_loss = 0.3270
+Eval on Train Set: Epoch 151, loss = 0.6594, unreg loss = 0.0951, error = 3.7143
+Eval on Valid Set: Epoch 151, time = 82925s, loss = 0.2649, error = 8.8571
+Eval on Test Set: Epoch 151, time = 82927s, loss = 0.4205, error = 12.8571
+Train Set: Epoch 151, batch 287, loss = 0.7184, unreg loss = 0.1527, error = 1.5625
+Valid on Hyper Set: valid_err = 12.50, valid_loss = 0.2900
+Eval on Train Set: Epoch 151, loss = 0.6768, unreg loss = 0.1110, error = 5.7143
+Eval on Valid Set: Epoch 151, time = 83053s, loss = 0.2911, error = 11.1429
+Eval on Test Set: Epoch 151, time = 83055s, loss = 0.4354, error = 15.1429
+Train Set: Epoch 151, batch 418, loss = 0.6764, unreg loss = 0.1099, error = 3.1250
+Valid on Hyper Set: valid_err = 11.88, valid_loss = 0.3106
+Eval on Train Set: Epoch 151, loss = 0.6918, unreg loss = 0.1252, error = 5.5714
+Eval on Valid Set: Epoch 151, time = 83181s, loss = 0.2876, error = 9.2857
+Eval on Test Set: Epoch 151, time = 83183s, loss = 0.4018, error = 16.2857
+Train Set: Epoch 151, batch 549, loss = 0.7797, unreg loss = 0.2129, error = 6.2500
+Valid on Hyper Set: valid_err = 11.56, valid_loss = 0.3782
+Eval on Train Set: Epoch 151, loss = 0.6834, unreg loss = 0.1165, error = 3.7143
+Eval on Valid Set: Epoch 151, time = 83309s, loss = 0.3317, error = 10.7143
+Eval on Test Set: Epoch 151, time = 83311s, loss = 0.4919, error = 13.8571
+Train Set: Epoch 152, batch 118, loss = 0.7898, unreg loss = 0.2223, error = 7.8125
+Valid on Hyper Set: valid_err = 11.88, valid_loss = 0.3641
+Eval on Train Set: Epoch 152, loss = 0.6801, unreg loss = 0.1125, error = 5.4286
+Eval on Valid Set: Epoch 152, time = 83436s, loss = 0.2641, error = 10.8571
+Eval on Test Set: Epoch 152, time = 83438s, loss = 0.4293, error = 15.1429
+Train Set: Epoch 152, batch 249, loss = 0.7403, unreg loss = 0.1727, error = 6.2500
+Valid on Hyper Set: valid_err = 11.09, valid_loss = 0.3341
+Eval on Train Set: Epoch 152, loss = 0.6841, unreg loss = 0.1165, error = 5.1429
+Eval on Valid Set: Epoch 152, time = 83565s, loss = 0.2557, error = 10.4286
+Eval on Test Set: Epoch 152, time = 83567s, loss = 0.3710, error = 14.4286
+Train Set: Epoch 152, batch 380, loss = 0.7632, unreg loss = 0.1985, error = 7.8125
+Valid on Hyper Set: valid_err = 12.66, valid_loss = 0.3333
+Eval on Train Set: Epoch 152, loss = 0.7048, unreg loss = 0.1401, error = 5.7143
+Eval on Valid Set: Epoch 152, time = 83693s, loss = 0.2543, error = 11.0000
+Eval on Test Set: Epoch 152, time = 83695s, loss = 0.4198, error = 15.0000
+Train Set: Epoch 152, batch 511, loss = 0.7814, unreg loss = 0.2162, error = 6.2500
+Valid on Hyper Set: valid_err = 11.72, valid_loss = 0.3109
+Eval on Train Set: Epoch 152, loss = 0.7075, unreg loss = 0.1423, error = 5.5714
+Eval on Valid Set: Epoch 152, time = 83820s, loss = 0.2931, error = 10.8571
+Eval on Test Set: Epoch 152, time = 83822s, loss = 0.4001, error = 13.7143
+Train Set: Epoch 153, batch 80, loss = 0.7892, unreg loss = 0.2233, error = 7.8125
+Valid on Hyper Set: valid_err = 10.16, valid_loss = 0.2476
+Eval on Train Set: Epoch 153, loss = 0.6463, unreg loss = 0.0805, error = 2.5714
+Eval on Valid Set: Epoch 153, time = 83948s, loss = 0.2509, error = 9.7143
+Eval on Test Set: Epoch 153, time = 83950s, loss = 0.4501, error = 14.8571
+Train Set: Epoch 153, batch 211, loss = 0.7847, unreg loss = 0.2206, error = 4.6875
+Valid on Hyper Set: valid_err = 14.06, valid_loss = 0.3641
+Eval on Train Set: Epoch 153, loss = 0.6645, unreg loss = 0.1004, error = 5.2857
+Eval on Valid Set: Epoch 153, time = 84076s, loss = 0.2627, error = 10.0000
+Eval on Test Set: Epoch 153, time = 84079s, loss = 0.4624, error = 14.8571
+Train Set: Epoch 153, batch 342, loss = 0.7047, unreg loss = 0.1399, error = 4.6875
+Valid on Hyper Set: valid_err = 14.22, valid_loss = 0.3159
+Eval on Train Set: Epoch 153, loss = 0.6855, unreg loss = 0.1208, error = 5.5714
+Eval on Valid Set: Epoch 153, time = 84205s, loss = 0.2313, error = 8.0000
+Eval on Test Set: Epoch 153, time = 84207s, loss = 0.4317, error = 15.1429
+Train Set: Epoch 153, batch 473, loss = 0.7482, unreg loss = 0.1829, error = 4.6875
+Valid on Hyper Set: valid_err = 13.59, valid_loss = 0.3478
+Eval on Train Set: Epoch 153, loss = 0.6710, unreg loss = 0.1058, error = 4.2857
+Eval on Valid Set: Epoch 153, time = 84332s, loss = 0.2604, error = 10.2857
+Eval on Test Set: Epoch 153, time = 84334s, loss = 0.4297, error = 14.1429
+Train Set: Epoch 154, batch 42, loss = 0.7196, unreg loss = 0.1527, error = 3.1250
+Valid on Hyper Set: valid_err = 10.62, valid_loss = 0.2776
+Eval on Train Set: Epoch 154, loss = 0.6610, unreg loss = 0.0939, error = 2.7143
+Eval on Valid Set: Epoch 154, time = 84460s, loss = 0.2939, error = 9.8571
+Eval on Test Set: Epoch 154, time = 84462s, loss = 0.4886, error = 14.5714
+Train Set: Epoch 154, batch 173, loss = 0.6963, unreg loss = 0.1282, error = 1.5625
+Valid on Hyper Set: valid_err = 12.19, valid_loss = 0.3408
+Eval on Train Set: Epoch 154, loss = 0.6773, unreg loss = 0.1093, error = 5.5714
+Eval on Valid Set: Epoch 154, time = 84588s, loss = 0.2736, error = 9.8571
+Eval on Test Set: Epoch 154, time = 84590s, loss = 0.4559, error = 15.1429
+Train Set: Epoch 154, batch 304, loss = 0.7394, unreg loss = 0.1724, error = 6.2500
+Valid on Hyper Set: valid_err = 11.88, valid_loss = 0.3360
+Eval on Train Set: Epoch 154, loss = 0.6872, unreg loss = 0.1202, error = 4.8571
+Eval on Valid Set: Epoch 154, time = 84716s, loss = 0.3010, error = 9.8571
+Eval on Test Set: Epoch 154, time = 84718s, loss = 0.4932, error = 14.5714
+Train Set: Epoch 154, batch 435, loss = 0.6531, unreg loss = 0.0855, error = 0.0000
+Valid on Hyper Set: valid_err = 11.09, valid_loss = 0.3217
+
+
+
+
+
+
+...
+
+
+
+
+....
+
+
+
+
+
+
+
+
+
+Valid on Hyper Set: valid_err = 9.53, valid_loss = 0.2136
+Eval on Train Set: Epoch 284, loss = 0.7576, unreg loss = 0.0967, error = 4.4286
+Eval on Valid Set: Epoch 284, time = 156685s, loss = 0.2421, error = 10.4286
+Eval on Test Set: Epoch 284, time = 156687s, loss = 0.3349, error = 13.4286
+Train Set: Epoch 285, batch 42, loss = 0.8299, unreg loss = 0.1700, error = 6.2500
+Valid on Hyper Set: valid_err = 10.78, valid_loss = 0.2954
+Eval on Train Set: Epoch 285, loss = 0.7835, unreg loss = 0.1236, error = 5.0000
+Eval on Valid Set: Epoch 285, time = 156814s, loss = 0.2736, error = 10.1429
+Eval on Test Set: Epoch 285, time = 156816s, loss = 0.4024, error = 13.8571
+Train Set: Epoch 285, batch 173, loss = 0.8263, unreg loss = 0.1661, error = 6.2500
+Valid on Hyper Set: valid_err = 10.31, valid_loss = 0.2380
+Eval on Train Set: Epoch 285, loss = 0.7717, unreg loss = 0.1114, error = 4.1429
+Eval on Valid Set: Epoch 285, time = 156943s, loss = 0.2622, error = 10.2857
+Eval on Test Set: Epoch 285, time = 156945s, loss = 0.3653, error = 13.1429
+Train Set: Epoch 285, batch 304, loss = 0.9264, unreg loss = 0.2679, error = 12.5000
+Valid on Hyper Set: valid_err = 8.91, valid_loss = 0.2344
+Eval on Train Set: Epoch 285, loss = 0.7749, unreg loss = 0.1163, error = 5.1429
+Eval on Valid Set: Epoch 285, time = 157072s, loss = 0.2535, error = 9.7143
+Eval on Test Set: Epoch 285, time = 157074s, loss = 0.3892, error = 14.2857
+Train Set: Epoch 285, batch 435, loss = 0.8225, unreg loss = 0.1619, error = 4.6875
+Valid on Hyper Set: valid_err = 8.59, valid_loss = 0.2290
+Eval on Train Set: Epoch 285, loss = 0.7532, unreg loss = 0.0927, error = 4.8571
+Eval on Valid Set: Epoch 285, time = 157200s, loss = 0.2671, error = 9.8571
+Eval on Test Set: Epoch 285, time = 157203s, loss = 0.3909, error = 14.2857
+Train Set: Epoch 286, batch 4, loss = 0.7860, unreg loss = 0.1246, error = 3.1250
+Valid on Hyper Set: valid_err = 7.19, valid_loss = 0.2132
+Eval on Train Set: Epoch 286, loss = 0.7472, unreg loss = 0.0858, error = 5.1429
+Eval on Valid Set: Epoch 286, time = 157329s, loss = 0.2383, error = 10.0000
+Eval on Test Set: Epoch 286, time = 157331s, loss = 0.3987, error = 11.8571
+Train Set: Epoch 286, batch 135, loss = 0.7738, unreg loss = 0.1174, error = 4.6875
+Valid on Hyper Set: valid_err = 10.78, valid_loss = 0.2082
+Eval on Train Set: Epoch 286, loss = 0.7566, unreg loss = 0.1002, error = 5.0000
+Eval on Valid Set: Epoch 286, time = 157458s, loss = 0.2097, error = 9.4286
+Eval on Test Set: Epoch 286, time = 157460s, loss = 0.4252, error = 14.5714
+Train Set: Epoch 286, batch 266, loss = 0.8536, unreg loss = 0.1971, error = 6.2500
+Valid on Hyper Set: valid_err = 7.66, valid_loss = 0.2260
+Eval on Train Set: Epoch 286, loss = 0.7431, unreg loss = 0.0864, error = 3.5714
+Eval on Valid Set: Epoch 286, time = 157587s, loss = 0.2255, error = 9.2857
+Eval on Test Set: Epoch 286, time = 157589s, loss = 0.4388, error = 14.1429
+Train Set: Epoch 286, batch 397, loss = 0.7824, unreg loss = 0.1284, error = 3.1250
+Valid on Hyper Set: valid_err = 11.41, valid_loss = 0.2636
+Eval on Train Set: Epoch 286, loss = 0.7159, unreg loss = 0.0618, error = 3.2857
+Eval on Valid Set: Epoch 286, time = 157715s, loss = 0.2332, error = 10.2857
+Eval on Test Set: Epoch 286, time = 157718s, loss = 0.4237, error = 13.4286
+Train Set: Epoch 286, batch 528, loss = 0.8633, unreg loss = 0.2051, error = 4.6875
+Valid on Hyper Set: valid_err = 11.88, valid_loss = 0.3352
+
+
