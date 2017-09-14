@@ -1,6 +1,6 @@
 # hypergrad-experiments
 
-Experiments with gradient-based hyperparameter optimization for [my master's project](https://uwaterloo.ca/computational-mathematics/sites/ca.computational-mathematics/files/uploads/files/michael_st._jules.pdf)
+Experiments with gradient-based hyperparameter optimization for [my master's project](https://uwaterloo.ca/computational-mathematics/sites/ca.computational-mathematics/files/uploads/files/michael_st._jules.pdf).
 
 ### Abstract
 
@@ -24,4 +24,6 @@ Continuous Regularization Hyperparameters](http://proceedings.mlr.press/v48/luke
 
 [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993)
 
-The code here is edited from https://github.com/bigaidream-projects/drmad (and https://github.com/HIPS/hypergrad), and https://github.com/Lasagne/Recipes/tree/master/papers/densenet
+The code here is edited from https://github.com/bigaidream-projects/drmad (and https://github.com/HIPS/hypergrad), and https://github.com/Lasagne/Recipes/tree/master/papers/densenet.
+
+The CPU version (cpu-ver) is written in Python and uses https://github.com/HIPS/autograd, while the GPU version (gpu-ver) is written in Theano. 
