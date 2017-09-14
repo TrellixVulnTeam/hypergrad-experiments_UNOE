@@ -1,6 +1,6 @@
-# hypergrad-experiments
+# Experiments with gradient-based hyperparameter optimization 
 
-Experiments with gradient-based hyperparameter optimization for [my master's project](https://uwaterloo.ca/computational-mathematics/sites/ca.computational-mathematics/files/uploads/files/michael_st._jules.pdf).
+For [my master's project](https://uwaterloo.ca/computational-mathematics/sites/ca.computational-mathematics/files/uploads/files/michael_st._jules.pdf).
 
 ### Abstract
 
